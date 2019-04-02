@@ -29,36 +29,36 @@
 
 using namespace std;
 
-int Home_Score = 0, Away_Score = 0; //Team Score integer
-int Period = 1, lastPeriod = 0; //Period integer | Default = 1, last period value
-int minu = 0, seco = 0, mseco = 0; //Minutes, Seconds, and Milliseconds integer
-int hp1m = 0, hp2m = 0, hp1s = 0, hp2s = 0, ap1m = 0, ap2m = 0, ap1s = 0, ap2s = 0; //Penalty times
-int hp1=0, hp2=0, ap1=0, ap2=0; //Penalty checkboxes
-int mins = 0, secs = 0; //Used for To_input
-int saved_speed = 0, last_speed = 0; //Stored speed integer
-int speed = 100; //Speed integer | Default = 1000 (1seconds) | Milliseconds = 1000(0.1seconds)
-int Clock_button = 0; //Start/Stop button
-int Normal_Speed = 100, Millisecond_Speed = 93;
-int PresetRadio = 4; //clock reset value
+static int Home_Score = 0, Away_Score = 0; //Team Score integer
+static int Period = 1, lastPeriod = 0; //Period integer | Default = 1, last period value
+static int minu = 0, seco = 0, mseco = 0; //Minutes, Seconds, and Milliseconds integer
+static int hp1m = 0, hp2m = 0, hp1s = 0, hp2s = 0, ap1m = 0, ap2m = 0, ap1s = 0, ap2s = 0; //Penalty times
+static int hp1=0, hp2=0, ap1=0, ap2=0; //Penalty checkboxes
+static int mins = 0, secs = 0; //Used for To_input
+static int saved_speed = 0, last_speed = 0; //Stored speed integer
+static int speed = 100; //Speed integer | Default = 1000 (1seconds) | Milliseconds = 1000(0.1seconds)
+static int Clock_button = 0; //Start/Stop button
+static int Normal_Speed = 100, Millisecond_Speed = 93;
+static int PresetRadio = 4; //clock reset value
 
-bool bol = false; //Open/Close for the server
-bool many = false; //For milliseconds register
-bool secflag = false; //when ms = 0 set flag
-bool input_stop = false; //Stop getting the number from the input
-bool getinput = false;
-bool testplayer = false; //Test player button
-bool to_switch; //On/Off for To_input
-bool Milliseconds = true, Minute_Zero = false, Hotkey = false, Stopwatch_input = false; //On/Off for Milliseconds, Add zero to minute, Hotkey, Stopwatch
-bool presetbool = true; //Preset timer
-bool SecretIanButton = false; //Secret Ian Button
+static bool bol = false; //Open/Close for the server
+static bool many = false; //For milliseconds register
+static bool secflag = false; //when ms = 0 set flag
+static bool input_stop = false; //Stop getting the number from the input
+static bool getinput = false;
+static bool testplayer = false; //Test player button
+static bool to_switch; //On/Off for To_input
+static bool Milliseconds = true, Minute_Zero = false, Hotkey = false, Stopwatch_input = false; //On/Off for Milliseconds, Add zero to minute, Hotkey, Stopwatch
+static bool presetbool = true; //Preset timer
+static bool SecretIanButton = false; //Secret Ian Button
 
-string minutes_zero = "", seconds_zero = ""; //For 9 <-> 0 | Example: 09 05
-string home_color = "";
-string away_color = "";
-string Home_Name = "", Away_Name = ""; //Name for Home, Away
-string clock_symbol = ":"; //Clock Symbol | Default = : | Milliseconds = .
-string Window_Name = "Scoreboard Control Panel"; //Please Change this after a update!
-QString clock_text = "00:00";   //the clock text
+static string minutes_zero = "", seconds_zero = ""; //For 9 <-> 0 | Example: 09 05
+static string home_color = "";
+static string away_color = "";
+static string Home_Name = "", Away_Name = ""; //Name for Home, Away
+static string clock_symbol = ":"; //Clock Symbol | Default = : | Milliseconds = .
+static string Window_Name = "Scoreboard Control Panel"; //Please Change this after a update!
+static QString clock_text = "00:00";   //the clock text
 
 ScoreboardMain::ScoreboardMain(QWidget *parent) :
     QMainWindow(parent),
