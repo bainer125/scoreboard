@@ -8,6 +8,7 @@ Dialog::Dialog(QWidget *parent) :
     ui(new Ui::Dialog)
 {
     ui->setupUi(this);
+    this->setAttribute(Qt::WA_TranslucentBackground);
 }
 
 Dialog::~Dialog()

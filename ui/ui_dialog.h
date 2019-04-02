@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'dialog.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.0
+** Created by: Qt User Interface Compiler version 5.12.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -49,7 +49,7 @@ public:
         Dialog->resize(1290, 210);
         Dialog->setLayoutDirection(Qt::LeftToRight);
         Dialog->setAutoFillBackground(false);
-        Dialog->setStyleSheet(QString::fromUtf8("background: #00ff00"));
+        Dialog->setStyleSheet(QString::fromUtf8("background: transparent"));
         Scoreboard = new QFrame(Dialog);
         Scoreboard->setObjectName(QString::fromUtf8("Scoreboard"));
         Scoreboard->setGeometry(QRect(0, 0, 1280, 141));

@@ -8,6 +8,7 @@ Intermission::Intermission(QWidget *parent) :
     ui(new Ui::Intermission)
 {
     ui->setupUi(this);
+    this->setAttribute(Qt::WA_TranslucentBackground);
 }
 
 Intermission::~Intermission()
