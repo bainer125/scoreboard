@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="intermission"
+   viewBox="0 0 995 170"
+   version="1.1"
+   sodipodi:docname="itmsn.svg"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14">
+  <metadata
+     id="metadata45">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>itmsn_base</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview43"
+     showgrid="false"
+     inkscape:zoom="1.4472362"
+     inkscape:cx="491.72856"
+     inkscape:cy="85"
+     inkscape:current-layer="intermission" />
+  <defs
+     id="defs29">
+    <style
+       id="style2">.cls-1,.cls-2,.cls-3,.cls-4{stroke:#fff;stroke-miterlimit:10;}.cls-1,.cls-2,.cls-3{stroke-width:3px;}.cls-1{fill:url(#linear-gradient);}.cls-2{fill:url(#linear-gradient-2);}.cls-3{fill:url(#linear-gradient-3);}.cls-4{fill:none;stroke-width:5px;}</style>
+    <linearGradient
+       id="linear-gradient"
+       x1="704.86"
+       y1="807"
+       x2="704.86"
+       y2="917"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop4" />
+      <stop
+         offset="0.01"
+         stop-color="#e5e5e5"
+         id="stop6" />
+      <stop
+         offset="0.03"
+         stop-color="#bdbcbc"
+         id="stop8" />
+      <stop
+         offset="0.06"
+         stop-color="#989697"
+         id="stop10" />
+      <stop
+         offset="0.09"
+         stop-color="#787676"
+         id="stop12" />
+      <stop
+         offset="0.12"
+         stop-color="#5d5a5b"
+         id="stop14" />
+      <stop
+         offset="0.15"
+         stop-color="#484445"
+         id="stop16" />
+      <stop
+         offset="0.19"
+         stop-color="#373334"
+         id="stop18" />
+      <stop
+         offset="0.24"
+         stop-color="#2c2829"
+         id="stop20" />
+      <stop
+         offset="0.31"
+         stop-color="#252122"
+         id="stop22" />
+      <stop
+         offset="0.5"
+         stop-color="#231f20"
+         id="stop24" />
+    </linearGradient>
+    <linearGradient
+       id="linear-gradient-2"
+       x1="1215.14"
+       x2="1215.14"
+       xlink:href="#linear-gradient" />
+    <linearGradient
+       id="linear-gradient-3"
+       x1="960"
+       x2="960"
+       xlink:href="#linear-gradient" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linear-gradient"
+       id="linearGradient862"
+       x1="1214.5916"
+       y1="807"
+       x2="1214.5916"
+       y2="917"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linear-gradient"
+       id="linearGradient866"
+       x1="959.99994"
+       y1="807"
+       x2="959.99994"
+       y2="917"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <title
+     id="title31">itmsn_base</title>
+  <g
+     id="intermission_base"
+     data-name="intermission base"
+     inkscape:export-filename="/home/stream/ScoreboardDev/Main-Project/Graphics/Intermission/itmsn.png"
+     inkscape:export-xdpi="170"
+     inkscape:export-ydpi="170">
+    <g
+       id="center_console"
+       data-name="center console">
+      <path
+         id="home_score"
+         data-name="home score"
+         class="cls-1"
+         d="m 774.72,917 a 110.11,110.11 0 0 1 0,-110 h -125 a 110.11,110.11 0 0 0 0,110 z"
+         transform="translate(-462.5,-804.5)"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linear-gradient);stroke:#ffffff;stroke-width:3px;stroke-miterlimit:10" />
+      <path
+         id="away_score"
+         data-name="away score"
+         class="cls-2"
+         d="m 1160,807 h -14.72 a 110.11,110.11 0 0 1 0,110 h 125 a 110.11,110.11 0 0 0 0,-110 z"
+         transform="translate(-462.5,-804.5)"
+         style="fill:url(#linearGradient862);fill-opacity:1;stroke:#ffffff;stroke-width:3px;stroke-miterlimit:10"
+         inkscape:connector-curvature="0" />
+      <path
+         id="title"
+         class="cls-3"
+         d="M 1145.28,807 H 774.72 a 110.11,110.11 0 0 0 0,110 h 370.56 a 110.11,110.11 0 0 0 0,-110 z"
+         transform="translate(-462.5,-804.5)"
+         style="fill:url(#linearGradient866);fill-opacity:1;stroke:#ffffff;stroke-width:3px;stroke-miterlimit:10"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="main_borders"
+       data-name="main borders">
+      <path
+         id="home_border"
+         data-name="home border"
+         class="cls-4"
+         d="m 792.71,917 h -143 a 110.11,110.11 0 0 1 0,-110 H 487.08 a 165.17,165.17 0 0 0 0,165 H 960 v -55 z"
+         transform="translate(-462.5,-804.5)"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#ffffff;stroke-width:5px;stroke-miterlimit:10" />
+      <path
+         id="away_border"
+         data-name="away border"
+         class="cls-4"
+         d="m 1432.92,807 h -162.64 a 110.11,110.11 0 0 1 0,110 H 960 v 55 h 472.92 a 165.17,165.17 0 0 0 0,-165 z"
+         transform="translate(-462.5,-804.5)"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#ffffff;stroke-width:5px;stroke-miterlimit:10" />
+      <path
+         id="center_console_border"
+         data-name="center console border"
+         class="cls-4"
+         d="M 1270.28,807 H 649.72 a 110.11,110.11 0 0 0 0,110 h 620.56 a 110.11,110.11 0 0 0 0,-110 z"
+         transform="translate(-462.5,-804.5)"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#ffffff;stroke-width:5px;stroke-miterlimit:10" />
+    </g>
+  </g>
+</svg>

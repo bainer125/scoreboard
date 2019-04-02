@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="power_plays_tangent"
+   data-name="power plays tangent"
+   viewBox="0 0 292.37 50"
+   version="1.1"
+   sodipodi:docname="pp_away.svg"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14">
+  <metadata
+     id="metadata39">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="999"
+     id="namedview37"
+     showgrid="false"
+     inkscape:zoom="4.3780142"
+     inkscape:cx="146.185"
+     inkscape:cy="25"
+     inkscape:window-x="0"
+     inkscape:window-y="52"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="power_plays_tangent" />
+  <defs
+     id="defs29">
+    <style
+       id="style2">.cls-1{stroke:#fff;stroke-miterlimit:10;stroke-width:5px;fill:url(#linear-gradient);}</style>
+    <linearGradient
+       id="linear-gradient"
+       x1="977.38"
+       y1="47"
+       x2="977.38"
+       y2="227"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#231f20"
+         id="stop4" />
+      <stop
+         offset="0.03"
+         stop-color="#332d1d"
+         id="stop6" />
+      <stop
+         offset="0.11"
+         stop-color="#605315"
+         id="stop8" />
+      <stop
+         offset="0.19"
+         stop-color="#86730d"
+         id="stop10" />
+      <stop
+         offset="0.27"
+         stop-color="#a38c08"
+         id="stop12" />
+      <stop
+         offset="0.35"
+         stop-color="#b79e04"
+         id="stop14" />
+      <stop
+         offset="0.42"
+         stop-color="#c4a802"
+         id="stop16" />
+      <stop
+         offset="0.5"
+         stop-color="#c8ac01"
+         id="stop18" />
+      <stop
+         offset="0.59"
+         stop-color="#dabc08"
+         id="stop20" />
+      <stop
+         offset="0.73"
+         stop-color="#eecf10"
+         id="stop22" />
+      <stop
+         offset="0.87"
+         stop-color="#fbda15"
+         id="stop24" />
+      <stop
+         offset="1"
+         stop-color="#ffde17"
+         id="stop26" />
+    </linearGradient>
+  </defs>
+  <title
+     id="title31">pp_away</title>
+  <g
+     id="away_pp"
+     data-name="away pp"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96">
+    <path
+       class="cls-1"
+       d="M 1063,114.5 H 840.87 a 43.57,43.57 0 0 0 0,45 h 237.62 l 31,-31 a 70.69,70.69 0 0 0 9.39,-11.66 q 0.6,-1.2 1.26,-2.34 z"
+       transform="translate(-832.11,-112)"
+       id="path33"
+       inkscape:connector-curvature="0"
+       style="fill:url(#linear-gradient);stroke:#ffffff;stroke-width:5px;stroke-miterlimit:10" />
+  </g>
+</svg>

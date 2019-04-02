@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="382"
+   height="106"
+   viewBox="0 0 358.125 99.374993"
+   id="svg6483"
+   version="1.1"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14"
+   sodipodi:docname="awayitmsn.svg"
+   inkscape:export-filename="/home/bainer/Pictures/Graphics/endperiod2.svg.png"
+   inkscape:export-xdpi="500"
+   inkscape:export-ydpi="500">
+  <defs
+     id="defs6485">
+    <linearGradient
+       id="linearGradient7139"
+       inkscape:collect="always">
+      <stop
+         id="stop7151"
+         offset="0"
+         style="stop-color:#000000;stop-opacity:1;" />
+      <stop
+         id="stop7153"
+         offset="1"
+         style="stop-color:#9e9e9e;stop-opacity:1" />
+    </linearGradient>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath7062-3-5">
+      <ellipse
+         style="opacity:1;fill:#000000;fill-opacity:1"
+         id="ellipse7064-8-0"
+         cx="308.57144"
+         cy="976.29077"
+         rx="139.28572"
+         ry="101.78571" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath7062-2">
+      <ellipse
+         style="opacity:1;fill:#000000;fill-opacity:1"
+         id="ellipse7064-6"
+         cx="308.57144"
+         cy="976.29077"
+         rx="139.28572"
+         ry="101.78571" />
+    </clipPath>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient7139"
+       id="linearGradient7157"
+       x1="139.40105"
+       y1="975.59064"
+       x2="293.3038"
+       y2="975.59064"
+       gradientUnits="userSpaceOnUse" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath841">
+      <ellipse
+         ry="101.78572"
+         rx="138.41464"
+         cy="976.29077"
+         cx="309.4425"
+         id="ellipse843"
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke-width:0.99686807" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath846">
+      <ellipse
+         ry="101.78572"
+         rx="138.55983"
+         cy="976.29077"
+         cx="309.29733"
+         id="ellipse848"
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke-width:0.99739075" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath851">
+      <ellipse
+         ry="101.78572"
+         rx="138.705"
+         cy="976.29077"
+         cx="309.15216"
+         id="ellipse853"
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke-width:0.99791318" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="140.78552"
+     inkscape:cy="93.511924"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="999"
+     inkscape:window-x="0"
+     inkscape:window-y="52"
+     inkscape:window-maximized="1"
+     inkscape:pagecheckerboard="true"
+     units="px" />
+  <metadata
+     id="metadata6488">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-952.98504)">
+    <rect
+       style="opacity:1;fill:url(#linearGradient7157);fill-opacity:1"
+       id="rect6493-6"
+       width="279.81226"
+       height="76.771591"
+       x="169.70563"
+       y="937.20483"
+       clip-path="url(#clipPath851)"
+       transform="matrix(-1.2584212,0,0,1.2584212,563.59295,-223.64773)"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"
+       inkscape:export-filename="/home/stream/ScoreboardDev/Main-Project/Teams/RPI/home_itmsn.png" />
+    <image
+       sodipodi:absref="/home/stream/Downloads/NHL_Logo_former.svg.png"
+       y="963.74146"
+       x="243.48251"
+       id="image4678"
+       xlink:href="file:///home/stream/Downloads/NHL_Logo_former.svg.png"
+       preserveAspectRatio="none"
+       height="81.775848"
+       width="79.539795"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+  </g>
+</svg>
