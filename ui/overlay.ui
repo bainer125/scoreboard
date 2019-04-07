@@ -31,14 +31,14 @@
   <widget class="QLabel" name="Scoreboard">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>60</y>
-     <width>311</width>
-     <height>51</height>
+     <x>50</x>
+     <y>10</y>
+     <width>1471</width>
+     <height>141</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background: red</string>
+    <string notr="true">background-image: url(/home/bainer/Downloads/scoreboard-01.svg)</string>
    </property>
    <property name="text">
     <string/>

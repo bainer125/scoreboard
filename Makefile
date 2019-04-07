@@ -54,20 +54,12 @@ OBJECTS_DIR   = build/
 
 SOURCES       = src/main.cpp \
 		src/scoreboardmain.cpp \
-		src/dialog.cpp \
-		src/intermission.cpp \
 		src/overlay.cpp build/moc_scoreboardmain.cpp \
-		build/moc_dialog.cpp \
-		build/moc_intermission.cpp \
 		build/moc_overlay.cpp
 OBJECTS       = build/main.o \
 		build/scoreboardmain.o \
-		build/dialog.o \
-		build/intermission.o \
 		build/overlay.o \
 		build/moc_scoreboardmain.o \
-		build/moc_dialog.o \
-		build/moc_intermission.o \
 		build/moc_overlay.o
 DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		/usr/lib/qt/mkspecs/common/unix.conf \
@@ -256,6 +248,7 @@ DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		/usr/lib/qt/mkspecs/features/qt_config.prf \
 		/usr/lib/qt/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/qt/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/lib/qt/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/qt/mkspecs/features/toolchain.prf \
 		/usr/lib/qt/mkspecs/features/default_pre.prf \
@@ -275,12 +268,8 @@ DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		/usr/lib/qt/mkspecs/features/yacc.prf \
 		/usr/lib/qt/mkspecs/features/lex.prf \
 		Scoreboard.pro src/scoreboardmain.h \
-		src/dialog.h \
-		src/intermission.h \
 		src/overlay.h src/main.cpp \
 		src/scoreboardmain.cpp \
-		src/dialog.cpp \
-		src/intermission.cpp \
 		src/overlay.cpp
 QMAKE_TARGET  = Scoreboard
 DESTDIR       = bin/
@@ -290,7 +279,7 @@ TARGET        = bin/Scoreboard
 first: all
 ####### Build rules
 
-bin/Scoreboard: ui/ui_scoreboardmain.h ui/ui_dialog.h ui/ui_intermission.h ui/ui_overlay.h $(OBJECTS)  
+bin/Scoreboard: ui/ui_scoreboardmain.h ui/ui_overlay.h $(OBJECTS)  
 	@test -d bin/ || mkdir -p bin/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -481,6 +470,7 @@ Makefile: Scoreboard.pro /usr/lib/qt/mkspecs/linux-g++/qmake.conf /usr/lib/qt/mk
 		/usr/lib/qt/mkspecs/features/qt_config.prf \
 		/usr/lib/qt/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/qt/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/lib/qt/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/qt/mkspecs/features/toolchain.prf \
 		/usr/lib/qt/mkspecs/features/default_pre.prf \
@@ -694,6 +684,7 @@ Makefile: Scoreboard.pro /usr/lib/qt/mkspecs/linux-g++/qmake.conf /usr/lib/qt/mk
 /usr/lib/qt/mkspecs/features/qt_config.prf:
 /usr/lib/qt/mkspecs/linux-g++/qmake.conf:
 /usr/lib/qt/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /usr/lib/qt/mkspecs/features/exclusive_builds.prf:
 /usr/lib/qt/mkspecs/features/toolchain.prf:
 /usr/lib/qt/mkspecs/features/default_pre.prf:
@@ -734,9 +725,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/qt/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents src/scoreboardmain.h src/dialog.h src/intermission.h src/overlay.h $(DISTDIR)/
-	$(COPY_FILE) --parents src/main.cpp src/scoreboardmain.cpp src/dialog.cpp src/intermission.cpp src/overlay.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ui/scoreboardmain.ui ui/dialog.ui ui/intermission.ui ui/overlay.ui $(DISTDIR)/
+	$(COPY_FILE) --parents src/scoreboardmain.h src/overlay.h $(DISTDIR)/
+	$(COPY_FILE) --parents src/main.cpp src/scoreboardmain.cpp src/overlay.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ui/scoreboardmain.ui ui/overlay.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -768,26 +759,14 @@ compiler_moc_predefs_clean:
 build/moc_predefs.h: /usr/lib/qt/mkspecs/features/data/dummy.cpp
 	g++ -pipe -O2 -march=x86-64 -mtune=generic -O2 -pipe -fstack-protector-strong -fno-plt -Wall -W -dM -E -o build/moc_predefs.h /usr/lib/qt/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: build/moc_scoreboardmain.cpp build/moc_dialog.cpp build/moc_intermission.cpp build/moc_overlay.cpp
+compiler_moc_header_make_all: build/moc_scoreboardmain.cpp build/moc_overlay.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) build/moc_scoreboardmain.cpp build/moc_dialog.cpp build/moc_intermission.cpp build/moc_overlay.cpp
+	-$(DEL_FILE) build/moc_scoreboardmain.cpp build/moc_overlay.cpp
 build/moc_scoreboardmain.cpp: src/scoreboardmain.h \
-		src/dialog.h \
-		src/intermission.h \
 		src/overlay.h \
 		build/moc_predefs.h \
 		/usr/bin/moc
 	/usr/bin/moc $(DEFINES) --include /home/bainer/Documents/Git/scoreboard/build/moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/bainer/Documents/Git/scoreboard -I/usr/include/qt -I/usr/include/qt/QtMultimedia -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtNetwork -I/usr/include/qt/QtXml -I/usr/include/qt/QtCore -I/usr/include/c++/8.2.1 -I/usr/include/c++/8.2.1/x86_64-pc-linux-gnu -I/usr/include/c++/8.2.1/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed -I/usr/include src/scoreboardmain.h -o build/moc_scoreboardmain.cpp
-
-build/moc_dialog.cpp: src/dialog.h \
-		build/moc_predefs.h \
-		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include /home/bainer/Documents/Git/scoreboard/build/moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/bainer/Documents/Git/scoreboard -I/usr/include/qt -I/usr/include/qt/QtMultimedia -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtNetwork -I/usr/include/qt/QtXml -I/usr/include/qt/QtCore -I/usr/include/c++/8.2.1 -I/usr/include/c++/8.2.1/x86_64-pc-linux-gnu -I/usr/include/c++/8.2.1/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed -I/usr/include src/dialog.h -o build/moc_dialog.cpp
-
-build/moc_intermission.cpp: src/intermission.h \
-		build/moc_predefs.h \
-		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include /home/bainer/Documents/Git/scoreboard/build/moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/bainer/Documents/Git/scoreboard -I/usr/include/qt -I/usr/include/qt/QtMultimedia -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtNetwork -I/usr/include/qt/QtXml -I/usr/include/qt/QtCore -I/usr/include/c++/8.2.1 -I/usr/include/c++/8.2.1/x86_64-pc-linux-gnu -I/usr/include/c++/8.2.1/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed -I/usr/include src/intermission.h -o build/moc_intermission.cpp
 
 build/moc_overlay.cpp: src/overlay.h \
 		build/moc_predefs.h \
@@ -798,20 +777,12 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui/ui_scoreboardmain.h ui/ui_dialog.h ui/ui_intermission.h ui/ui_overlay.h
+compiler_uic_make_all: ui/ui_scoreboardmain.h ui/ui_overlay.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui/ui_scoreboardmain.h ui/ui_dialog.h ui/ui_intermission.h ui/ui_overlay.h
+	-$(DEL_FILE) ui/ui_scoreboardmain.h ui/ui_overlay.h
 ui/ui_scoreboardmain.h: ui/scoreboardmain.ui \
 		/usr/bin/uic
 	/usr/bin/uic ui/scoreboardmain.ui -o ui/ui_scoreboardmain.h
-
-ui/ui_dialog.h: ui/dialog.ui \
-		/usr/bin/uic
-	/usr/bin/uic ui/dialog.ui -o ui/ui_dialog.h
-
-ui/ui_intermission.h: ui/intermission.ui \
-		/usr/bin/uic
-	/usr/bin/uic ui/intermission.ui -o ui/ui_intermission.h
 
 ui/ui_overlay.h: ui/overlay.ui \
 		/usr/bin/uic
@@ -828,28 +799,14 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 ####### Compile
 
 build/main.o: src/main.cpp src/scoreboardmain.h \
-		src/dialog.h \
-		src/intermission.h \
 		src/overlay.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/main.o src/main.cpp
 
 build/scoreboardmain.o: src/scoreboardmain.cpp src/scoreboardmain.h \
-		src/dialog.h \
-		src/intermission.h \
 		src/overlay.h \
 		ui/ui_scoreboardmain.h \
-		ui/ui_dialog.h \
-		ui/ui_intermission.h \
 		ui/ui_overlay.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/scoreboardmain.o src/scoreboardmain.cpp
-
-build/dialog.o: src/dialog.cpp src/dialog.h \
-		ui/ui_dialog.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/dialog.o src/dialog.cpp
-
-build/intermission.o: src/intermission.cpp src/intermission.h \
-		ui/ui_intermission.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/intermission.o src/intermission.cpp
 
 build/overlay.o: src/overlay.cpp src/overlay.h \
 		ui/ui_overlay.h
@@ -857,12 +814,6 @@ build/overlay.o: src/overlay.cpp src/overlay.h \
 
 build/moc_scoreboardmain.o: build/moc_scoreboardmain.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/moc_scoreboardmain.o build/moc_scoreboardmain.cpp
-
-build/moc_dialog.o: build/moc_dialog.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/moc_dialog.o build/moc_dialog.cpp
-
-build/moc_intermission.o: build/moc_intermission.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/moc_intermission.o build/moc_intermission.cpp
 
 build/moc_overlay.o: build/moc_overlay.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/moc_overlay.o build/moc_overlay.cpp
