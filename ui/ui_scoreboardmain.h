@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'scoreboardmain.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.0
+** Created by: Qt User Interface Compiler version 5.12.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -174,7 +174,7 @@ public:
         if (ScoreboardMain->objectName().isEmpty())
             ScoreboardMain->setObjectName(QString::fromUtf8("ScoreboardMain"));
         ScoreboardMain->setWindowModality(Qt::ApplicationModal);
-        ScoreboardMain->resize(583, 875);
+        ScoreboardMain->resize(581, 875);
         ScoreboardMain->setStyleSheet(QString::fromUtf8("alternate-background-color: rgb(253, 253, 253);"));
         About_ActionBar = new QAction(ScoreboardMain);
         About_ActionBar->setObjectName(QString::fromUtf8("About_ActionBar"));
@@ -287,7 +287,7 @@ public:
         font5.setWeight(50);
         Start_Button->setFont(font5);
         Start_Button->setFocusPolicy(Qt::NoFocus);
-        Start_Button->setStyleSheet(QString::fromUtf8(""));
+        Start_Button->setStyleSheet(QString::fromUtf8("background: green"));
         Period_Label = new QLabel(tab);
         Period_Label->setObjectName(QString::fromUtf8("Period_Label"));
         Period_Label->setGeometry(QRect(250, 400, 61, 71));
@@ -789,7 +789,7 @@ public:
         ScoreboardMain->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(ScoreboardMain);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 583, 31));
+        menuBar->setGeometry(QRect(0, 0, 581, 29));
         menuAbout = new QMenu(menuBar);
         menuAbout->setObjectName(QString::fromUtf8("menuAbout"));
         menuContributers = new QMenu(menuBar);
