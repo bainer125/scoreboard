@@ -25,17 +25,11 @@ RCC_DIR=rcc
 CONFIG += releas
 SOURCES += src/main.cpp\
         src/scoreboardmain.cpp \
-    src/dialog.cpp\
-    src/intermission.cpp\
     src/overlay.cpp
 
 
 HEADERS  += src/scoreboardmain.h \
-    src/dialog.h\
-    src/intermission.h\
     src/overlay.h
 
 FORMS    += ui/scoreboardmain.ui \
-    ui/dialog.ui\
-    ui/intermission.ui\
     ui/overlay.ui
