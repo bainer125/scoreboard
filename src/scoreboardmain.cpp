@@ -1,9 +1,5 @@
 #include "scoreboardmain.h"
 #include "ui_scoreboardmain.h"
-#include "dialog.h"
-#include "ui_dialog.h"
-#include "intermission.h"
-#include "ui_intermission.h"
 #include "overlay.h"
 #include "ui_overlay.h"
 #include <fstream>
@@ -67,14 +63,8 @@ ScoreboardMain::ScoreboardMain(QWidget *parent) :
     //Setup all the UIs
     ui->setupUi(this);
     this->setWindowFlags(Qt::WindowStaysOnTopHint);
-    di = new Dialog(NULL);
-    im = new Intermission(NULL);
     ol = new Overlay(NULL);
-    di->show();
-    im->show();
     ol->show();
-    di->lower();
-    im->lower();
     ol->lower();
 
     ui->Start_Button->setShortcut(QKeySequence(Qt::Key_Space));
@@ -206,11 +196,6 @@ void ScoreboardMain::Changed() //Changed Score,etc
     {
         writexml();
     }
-    di->Home_Score(Home_Score);
-    di->Away_Score(Away_Score);
-    di->period(Period);
-    im->Home_Score(Home_Score);
-    im->Away_Score(Away_Score);
 
     ui->HomeScore_Label->setText(QString::number(Home_Score));
     ui->AwayScore_Label->setText(QString::number(Away_Score));
@@ -325,8 +310,6 @@ void ScoreboardMain::on_Update_Team_Button_clicked() //Update Team Name Button
     {
         writexml();
     }
-    di->Home_Name(QString::fromStdString(Home_Name));
-    di->Away_Name(QString::fromStdString(Away_Name));
     QString homefile = "./Teams/";
     homefile.append(ui->Home_Option->currentText());
     homefile.append("/color.txt");
@@ -339,7 +322,6 @@ void ScoreboardMain::on_Update_Team_Button_clicked() //Update Team Name Button
     {
       while ( getline(Home_Color,line) )
       {
-          di->Home_Color(QString::fromStdString("background:" + line));
           home_color = line;
       }
       Home_Color.close();
@@ -349,7 +331,6 @@ void ScoreboardMain::on_Update_Team_Button_clicked() //Update Team Name Button
     {
       while ( getline(Away_Color,line) )
       {
-          di->Away_Color(QString::fromStdString("background:" + line));
           away_color = line;
       }
       Away_Color.close();
@@ -357,15 +338,9 @@ void ScoreboardMain::on_Update_Team_Button_clicked() //Update Team Name Button
     QString homeback = "background: url(./Teams/";
     homeback.append(ui->Home_Option->currentText());
     homeback.append("/itmsn_home.png)");
-    di->Home_Graphic("background: url(./Teams/"+ui->Home_Option->currentText()+"/scbd_home.png)");
-    ol->Home_Graphic("background: url(./Teams/"+ui->Home_Option->currentText()+"/scbd_home.png)");
-    im->Home_Graphic(homeback);
     QString awayback = "background: url(./Teams/";
     awayback.append(ui->Away_Option->currentText());
     awayback.append("/itmsn_away.png)");
-    di->Away_Graphic("background: url(./Teams/"+ui->Away_Option->currentText()+"/scbd_away.png)");
-    ol->Away_Graphic("background: url(./Teams/"+ui->Away_Option->currentText()+"/scbd_away.png)");
-    im->Away_Graphic(awayback);
 }
 
 void ScoreboardMain::on_Reset_Score_Button_clicked() //Reset Score Button
@@ -388,10 +363,6 @@ void ScoreboardMain::on_Swap_Button_clicked() //Swap Button
     ui->Home_Option->setCurrentText(QString::fromStdString(Home_Name));
     ui->Away_Option->setCurrentText(QString::fromStdString(Away_Name));
     ScoreboardMain::on_Update_Team_Button_clicked();
-    im->Home_Score(Home_Score);
-    im->Away_Score(Away_Score);
-    di->Home_Score(Home_Score);
-    di->Away_Score(Away_Score);
     if(ui->checkBox->isChecked())
     {
         writexml();
@@ -433,8 +404,6 @@ void ScoreboardMain::Update_Penalties()
 
     //Even strength
     if(hp1==1&&hp2==1&&ap1==1&&ap2==1){
-        di->EvenBack(QString::fromStdString("background:url(./Graphics/even_back.png)"));
-        di->EvenText(QString::fromStdString("3 on 3"));
         firstm = min(hp1m,min(hp2m,min(ap1m,ap2m)));
         if(hp1m==firstm){
             next1=hp1s;
@@ -450,16 +419,12 @@ void ScoreboardMain::Update_Penalties()
         }
         firsts = min(next1,min(next2,min(next3,next4)));
         if (firsts<10){
-            di->EvenClock(QString::number(firstm)+":0"+QString::number(firsts));
         }
         else{
-            di->EvenClock(QString::number(firstm)+":"+QString::number(firsts));
         }
         ScoreboardMain::Clear_Penalties("e");
     }
     else if((hp1+hp2)==1&&(ap1+ap2)==1){
-        di->EvenBack(QString::fromStdString("background:url(./Graphics/even_back.png)"));
-        di->EvenText(QString::fromStdString("4 on 4"));
         if(hp1){
             if(ap1){
                 firstm = min(hp1m,ap1m);
@@ -504,18 +469,14 @@ void ScoreboardMain::Update_Penalties()
         }
         firsts = min(next1,next2);
         if (firsts<10){
-            di->EvenClock(QString::number(firstm)+":0"+QString::number(firsts));
         }
         else{
-            di->EvenClock(QString::number(firstm)+":"+QString::number(firsts));
         }
         ScoreboardMain::Clear_Penalties("e");
     }
 
     //5 on 3 PPs
     else if(hp1==1&&hp2==1&&ap1==0&&ap2==0){
-        di->Away_Pen_Back(QString::fromStdString("background:url(./Graphics/away_pp.png)"));
-        di->APPText(QString::fromStdString("5 on 3"));
         firstm = min(hp1m,hp2m);
         if(hp1m==firstm){
             next1=hp1s;
@@ -525,16 +486,12 @@ void ScoreboardMain::Update_Penalties()
         }
         firsts=min(next1,next2);
         if (firsts<10){
-            di->APPClock(QString::number(firstm)+":0"+QString::number(firsts));
         }
         else{
-            di->APPClock(QString::number(firstm)+":"+QString::number(firsts));
         }
         ScoreboardMain::Clear_Penalties("a");
     }
     else if(hp1==0&&hp2==0&&ap1==1&&ap2==1){
-        di->Home_Pen_Back(QString::fromStdString("background:url(./Graphics/home_pp.png)"));
-        di->HPPText(QString::fromStdString("5 on 3"));
         firstm = min(ap1m,ap2m);
         if(ap1m==firstm){
             next1=ap1s;
@@ -544,18 +501,14 @@ void ScoreboardMain::Update_Penalties()
         }
         firsts=min(next1,next2);
         if (firsts<10){
-            di->HPPClock(QString::number(firstm)+":0"+QString::number(firsts));
         }
         else{
-            di->HPPClock(QString::number(firstm)+":"+QString::number(firsts));
         }
         ScoreboardMain::Clear_Penalties("h");
     }
 
     //4 on 3 PPs
     else if(hp1==1&&hp2==1&&(ap1+ap2)==1){
-        di->Away_Pen_Back(QString::fromStdString("background:url(./Graphics/away_pp.png)"));
-        di->APPText(QString::fromStdString("4 on 3"));
         if(ap1){
             firstm=min(ap1m,min(hp1m,hp2m));
             if(hp1m==firstm){
@@ -582,16 +535,12 @@ void ScoreboardMain::Update_Penalties()
         }
         firsts = min(next1,min(next2,next3));
         if (firsts<10){
-            di->APPClock(QString::number(firstm)+":0"+QString::number(firsts));
         }
         else{
-            di->APPClock(QString::number(firstm)+":"+QString::number(firsts));
         }
         ScoreboardMain::Clear_Penalties("a");
     }
     else if((hp1+hp2)==1&&ap1==1&&ap2==1){
-        di->Home_Pen_Back(QString::fromStdString("background:url(./Graphics/home_pp.png)"));
-        di->HPPText(QString::fromStdString("4 on 3"));
         if(hp1){
             firstm=min(hp1m,min(ap1m,ap2m));
             if(hp1m==firstm){
@@ -618,56 +567,38 @@ void ScoreboardMain::Update_Penalties()
         }
         firsts = min(next1,min(next2,next3));
         if (firsts<10){
-            di->HPPClock(QString::number(firstm)+":0"+QString::number(firsts));
         }
         else{
-            di->HPPClock(QString::number(firstm)+":"+QString::number(firsts));
         }
         ScoreboardMain::Clear_Penalties("h");
     }
 
     //5 on 4 PPs
     else if(hp1==1&&hp2==0&&ap1==0&&ap2==0){
-        di->Away_Pen_Back(QString::fromStdString("background:url(./Graphics/away_pp.png)"));
-        di->APPText(QString::fromStdString("PP"));
         if (hp1s<10){
-            di->APPClock(QString::number(hp1m)+":0"+QString::number(hp1s));
         }
         else{
-            di->APPClock(QString::number(hp1m)+":"+QString::number(hp1s));
         }
         ScoreboardMain::Clear_Penalties("a");
     }
     else if(hp1==0&&hp2==1&&ap1==0&&ap2==0){
-        di->Away_Pen_Back(QString::fromStdString("background:url(./Graphics/away_pp.png)"));
-        di->APPText(QString::fromStdString("PP"));
         if (hp2s<10){
-            di->APPClock(QString::number(hp2m)+":0"+QString::number(hp2s));
         }
         else{
-            di->APPClock(QString::number(hp2m)+":"+QString::number(hp2s));
         }
         ScoreboardMain::Clear_Penalties("a");
     }
     else if(hp1==0&&hp2==0&&ap1==1&&ap2==0){
-        di->Home_Pen_Back(QString::fromStdString("background:url(./Graphics/home_pp.png)"));
-        di->HPPText(QString::fromStdString("PP"));
         if (ap1s<10){
-            di->HPPClock(QString::number(ap1m)+":0"+QString::number(ap1s));
         }
         else{
-            di->HPPClock(QString::number(ap1m)+":"+QString::number(ap1s));
         }
         ScoreboardMain::Clear_Penalties("h");
     }
     else if(hp1==0&&hp2==0&&ap1==0&&ap2==1){
-        di->Home_Pen_Back(QString::fromStdString("background:url(./Graphics/home_pp.png)"));
-        di->HPPText(QString::fromStdString("PP"));
         if (ap2s<10){
-            di->HPPClock(QString::number(ap2m)+":0"+QString::number(ap2s));
         }
         else{
-            di->HPPClock(QString::number(ap2m)+":"+QString::number(ap2s));
         }
         ScoreboardMain::Clear_Penalties("h");
     }
@@ -682,39 +613,12 @@ void ScoreboardMain::Update_Penalties()
 void ScoreboardMain::Clear_Penalties(QString shown)
 {
     if(shown=="h"){
-        di->Away_Pen_Back(QString::fromStdString("background:transparent"));
-        di->EvenBack(QString::fromStdString("background:transparent"));
-        di->APPClock("");
-        di->APPText("");
-        di->EvenClock("");
-        di->EvenText("");
     }
     else if(shown=="a"){
-        di->Home_Pen_Back(QString::fromStdString("background:transparent"));
-        di->EvenBack(QString::fromStdString("background:transparent"));
-        di->HPPClock("");
-        di->HPPText("");
-        di->EvenClock("");
-        di->EvenText("");
     }
     else if(shown=="e"){
-        di->Away_Pen_Back(QString::fromStdString("background:transparent"));
-        di->Home_Pen_Back(QString::fromStdString("background:transparent"));
-        di->APPClock("");
-        di->APPText("");
-        di->HPPClock("");
-        di->HPPText("");
     }
     else{
-        di->Away_Pen_Back(QString::fromStdString("background:transparent"));
-        di->Home_Pen_Back(QString::fromStdString("background:transparent"));
-        di->EvenBack(QString::fromStdString("background:transparent"));
-        di->APPClock("");
-        di->APPText("");
-        di->HPPClock("");
-        di->HPPText("");
-        di->EvenClock("");
-        di->EvenText("");
     }
 }
 
@@ -927,7 +831,6 @@ void ScoreboardMain::updateClockView()
     else{
         clock_text = QString::number(minu) + ":" + QString::number(seco);
     }
-    di->Clock(clock_text);
 }
 
 void ScoreboardMain::on_Update_Timer_clicked()
@@ -937,8 +840,6 @@ void ScoreboardMain::on_Update_Timer_clicked()
 
 void ScoreboardMain::on_Intermission_Button_clicked()
 {
-    im->period(Period);
-    di->Clock("End");
 }
 
 void ScoreboardMain::on_End_Game_Button_clicked()
@@ -962,8 +863,6 @@ void ScoreboardMain::on_End_Game_Button_clicked()
     else{
         Period=10;
     }
-    im->period(Period);
-    di->Clock("Final");
     ScoreboardMain::Clear_Penalties("");
     Period=lastPeriod;
 }
@@ -1922,7 +1821,5 @@ void ScoreboardMain::on_SoundSpeed_Slider_sliderMoved(int slidepos)
 
 void ScoreboardMain::closeEvent(QCloseEvent *)
 {
-    di->close();
-    im->close();
     ol->close();
 }

@@ -4,6 +4,8 @@
 #include <QGraphicsEffect>
 #include <QPropertyAnimation>
 
+using namespace std;
+
 Overlay::Overlay(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Overlay)

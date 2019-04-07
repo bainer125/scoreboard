@@ -11,8 +11,6 @@
 #include <QNetworkReply>
 #include <QtXml>
 #include <QDialog>
-#include <src/dialog.h>
-#include <src/intermission.h>
 #include <src/overlay.h>
 
 
@@ -204,8 +202,6 @@ private slots:
 
 protected:
 private:
-    Dialog *di;
-    Intermission *im;
     Overlay *ol;
     Ui::ScoreboardMain *ui;
     QTimer *clock;
