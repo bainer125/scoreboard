@@ -4,8 +4,14 @@
  add web scraping
  player stats
  
- update graphics
- finish graphic configs for other teams
  maybe add auto graphic maker?
  
  add end game graphic (should just be a matter of adding button)
+
+ update svg outputs
+
+ add clocks for each penalty (6 penalties per team)
+
+ add support for each sport
+ 
+ reformat UI
