@@ -29,10 +29,10 @@ static int Home_Score = 0, Away_Score = 0; //Team Score integer
 static int Period = 1, lastPeriod = 0; //Period integer | Default = 1, last period value
 static int minu = 0, seco = 0, mseco = 0; //Minutes, Seconds, and Milliseconds integer
 static int hp1m = 0, hp2m = 0, hp1s = 0, hp2s = 0, ap1m = 0, ap2m = 0, ap1s = 0, ap2s = 0; //Penalty times
-static int hp1=0, hp2=0, ap1=0, ap2=0; //Penalty checkboxes
+static int hp1=0, hp2=0, hp3=0, hp4=0, hp5=0, hp6=0, ap1=0, ap2=0, ap3=0, ap4=0, ap5=0, ap6=0; //Penalty checkboxes/flags
 static int mins = 0, secs = 0; //Used for To_input
-static int saved_speed = 0, last_speed = 0; //Stored speed integer
-static int speed = 100; //Speed integer | Default = 1000 (1seconds) | Milliseconds = 1000(0.1seconds)
+static int saved_speed = 0; //Stored speed integer
+static int speed = 100; //Speed integer | Default = 1000 (1seconds) | Milliseconds = 100(0.1seconds)
 static int Clock_button = 0; //Start/Stop button
 static int Normal_Speed = 100, Millisecond_Speed = 93;
 static int PresetRadio = 4; //clock reset value
