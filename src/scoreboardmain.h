@@ -6,9 +6,6 @@
 #include <QTcpServer>
 #include <QTcpSocket>
 #include <QMediaPlayer>
-#include <QNetworkAccessManager>
-#include <QNetworkRequest>
-#include <QNetworkReply>
 #include <QtXml>
 #include <QDialog>
 #include <src/overlay.h>
@@ -45,7 +42,7 @@ private slots:
     void Update_Penalties();
     
     void Penalty_Timer();
-    
+
     void on_HP1_clicked();
     
     void on_HP2_clicked();
@@ -57,8 +54,6 @@ private slots:
     void on_HomeUP_Button_clicked();
 
     void Opened();
-
-    void WarningBox();
     
     void on_Minute10up_clicked();
     
@@ -177,9 +172,6 @@ private:
     QTimer *clock;
     QTimer *currenttime;
     QTimer *hotkey;
-    QTcpServer server;
-    QTcpSocket* client;
-    QNetworkAccessManager *manager;
     QMediaPlayer *player;
 };
 

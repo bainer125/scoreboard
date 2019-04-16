@@ -151,7 +151,6 @@ void ScoreboardMain::on_HomeUP_Button_clicked() //Home_Up Button
     ScoreboardMain::Changed();
     if(ui->pushButton->text() == "Disable")
     {
-        client->write(QString("Home_Score:" + QString::number(Home_Score) + "\n").toUtf8());
     }else{
         return;
     }
@@ -163,7 +162,6 @@ void ScoreboardMain::on_HomeUP2_Button_clicked() //Home_+2 Button
     ScoreboardMain::Changed();
     if(ui->pushButton->text() == "Disable")
     {
-        client->write(QString("Home_Score:" + QString::number(Home_Score) + "\n").toUtf8());
     }else{
         return;
     }
@@ -175,7 +173,6 @@ void ScoreboardMain::on_HomeDOWN_Button_clicked() //Home_Down Button
     ScoreboardMain::Changed();
     if(ui->pushButton->text() == "Disable")
     {
-        client->write(QString("Home_Score:" + QString::number(Home_Score) + "\n").toUtf8());
     }else{
         return;
     }
@@ -187,7 +184,6 @@ void ScoreboardMain::on_AwayUP_Button_clicked() //Away_Up Button
     ScoreboardMain::Changed();
     if(ui->pushButton->text() == "Disable")
     {
-        client->write(QString("Away_Score:" + QString::number(Away_Score) + "\n").toUtf8());
     }else{
         return;
     }
@@ -199,7 +195,6 @@ void ScoreboardMain::on_AwayUp2_Button_clicked() //Away_+2 Button
     ScoreboardMain::Changed();
     if(ui->pushButton->text() == "Disable")
     {
-        client->write(QString("Away_Score:" + QString::number(Away_Score) + "\n").toUtf8());
     }else{
         return;
     }
@@ -211,7 +206,6 @@ void ScoreboardMain::on_AwayDOWN_Button_clicked() //Away_Down Button
     ScoreboardMain::Changed();
     if(ui->pushButton->text() == "Disable")
     {
-        client->write(QString("Away_Score:" + QString::number(Away_Score) + "\n").toUtf8());
     }else{
         return;
     }
@@ -225,7 +219,6 @@ void ScoreboardMain::on_PeriodUP_Button_clicked() //Period_Up Button
     ScoreboardMain::Changed();
     if(ui->pushButton->text() == "Disable")
     {
-        client->write(QString("Period:" + QString::number(Period) + "\n").toUtf8());
     }else{
         return;
     }
@@ -239,7 +232,6 @@ void ScoreboardMain::on_PeriodDOWN_Button_clicked() //Period_Down Button
     ScoreboardMain::Changed();
     if(ui->pushButton->text() == "Disable")
     {
-        client->write(QString("Period:" + QString::number(Period) + "\n").toUtf8());
     }else{
         return;
     }
@@ -981,7 +973,6 @@ void ScoreboardMain::Stopwatch() //Stopwatch
     }
     if(ui->pushButton->text() == "Disable")
     {
-        client->write(QString("Clock:  " + QString::fromStdString(minutes_zero) + QString::number(minu) + QString::fromStdString(clock_symbol) + QString::fromStdString(seconds_zero) + QString::number(seco)).toUtf8());
     }
     if(getinput == true)
     {
@@ -1119,7 +1110,6 @@ void ScoreboardMain::on_Reset_Button_clicked() //Reset Clock button
         }
         if(ui->pushButton->text() == "Disable")
         {
-        client->write(QString("Clock: 5:00").toUtf8());
         }
     }else if(presetbool == true && PresetRadio == 2 && Stopwatch_input == false)
     {
@@ -1137,7 +1127,6 @@ void ScoreboardMain::on_Reset_Button_clicked() //Reset Clock button
         }
         if(ui->pushButton->text() == "Disable")
         {
-        client->write(QString("Clock:  12:00").toUtf8());
         }
     }else if(presetbool == true && PresetRadio == 3 && Stopwatch_input == false)
     {
@@ -1155,7 +1144,6 @@ void ScoreboardMain::on_Reset_Button_clicked() //Reset Clock button
         }
         if(ui->pushButton->text() == "Disable")
         {
-        client->write(QString("Clock:  15:00").toUtf8());
         }
     }else if(presetbool == true && PresetRadio == 4 && Stopwatch_input == false)
     {
@@ -1173,7 +1161,6 @@ void ScoreboardMain::on_Reset_Button_clicked() //Reset Clock button
         }
         if(ui->pushButton->text() == "Disable")
         {
-        client->write(QString("Clock:  20:00").toUtf8());
         }
     }else{
         if(ui->checkBox->isChecked())
@@ -1192,7 +1179,6 @@ void ScoreboardMain::on_Reset_Button_clicked() //Reset Clock button
         clock_symbol = ":";
         if(ui->pushButton->text() == "Disable")
         {
-        client->write(QString("Clock:  00:00").toUtf8());
         }
     }
     many = false;
@@ -1279,7 +1265,6 @@ void ScoreboardMain::timeclock()
     ScoreboardMain::updateClockView();
     if(ui->pushButton->text() == "Disable")
     {
-        client->write(QString("Clock:" + QString::number(local->tm_hour) + ":" + QString::fromStdString(minutes_zero) + QString::number(local->tm_min) + ":" + QString::fromStdString(seconds_zero) + QString::number(local->tm_sec)).toUtf8());
     }
 }
 
@@ -1297,7 +1282,6 @@ void ScoreboardMain::ifclockinputchanged()
     }
     if(ui->pushButton->text() == "Disable")
     {
-        client->write(QString("Clock:  " + QString::fromStdString(minutes_zero) + QString::number(minu) + QString::fromStdString(clock_symbol) + QString::fromStdString(seconds_zero) + QString::number(seco)).toUtf8());
     }
 }
 
