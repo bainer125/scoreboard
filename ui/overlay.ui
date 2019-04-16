@@ -33,12 +33,12 @@
     <rect>
      <x>50</x>
      <y>10</y>
-     <width>1471</width>
-     <height>141</height>
+     <width>741</width>
+     <height>221</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-image: url(/home/bainer/Downloads/scoreboard-01.svg)</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>

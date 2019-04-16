@@ -14,10 +14,10 @@ EQ            = =
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DQT_NO_DEBUG -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_NO_DEBUG -DQT_MULTIMEDIA_LIB -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -O2 -march=x86-64 -mtune=generic -O2 -pipe -fstack-protector-strong -fno-plt -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -O2 -march=x86-64 -mtune=generic -O2 -pipe -fstack-protector-strong -fno-plt -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I. -isystem /usr/include/qt -isystem /usr/include/qt/QtMultimedia -isystem /usr/include/qt/QtWidgets -isystem /usr/include/qt/QtGui -isystem /usr/include/qt/QtNetwork -isystem /usr/include/qt/QtXml -isystem /usr/include/qt/QtCore -Ibuild -isystem /usr/include/libdrm -Iui -I/usr/lib/qt/mkspecs/linux-g++
+INCPATH       = -I. -isystem /usr/include/qt -isystem /usr/include/qt/QtMultimedia -isystem /usr/include/qt/QtSvg -isystem /usr/include/qt/QtWidgets -isystem /usr/include/qt/QtGui -isystem /usr/include/qt/QtNetwork -isystem /usr/include/qt/QtXml -isystem /usr/include/qt/QtCore -Ibuild -isystem /usr/include/libdrm -Iui -I/usr/lib/qt/mkspecs/linux-g++
 QMAKE         = /usr/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -40,7 +40,7 @@ DISTNAME      = Scoreboard1.0.0
 DISTDIR = /home/bainer/Documents/Git/scoreboard/build/Scoreboard1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1 -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now
-LIBS          = $(SUBLIBS) -lQt5Multimedia -lQt5Widgets -lQt5Gui -lQt5Network -lQt5Xml -lQt5Core /usr/lib/libGL.so -lpthread   
+LIBS          = $(SUBLIBS) -lQt5Multimedia -lQt5Svg -lQt5Widgets -lQt5Gui -lQt5Network -lQt5Xml -lQt5Core /usr/lib/libGL.so -lpthread   
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -54,11 +54,13 @@ OBJECTS_DIR   = build/
 
 SOURCES       = src/main.cpp \
 		src/scoreboardmain.cpp \
-		src/overlay.cpp build/moc_scoreboardmain.cpp \
+		src/overlay.cpp \
+		src/updatesvg.cpp build/moc_scoreboardmain.cpp \
 		build/moc_overlay.cpp
 OBJECTS       = build/main.o \
 		build/scoreboardmain.o \
 		build/overlay.o \
+		build/updatesvg.o \
 		build/moc_scoreboardmain.o \
 		build/moc_overlay.o
 DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
@@ -268,9 +270,11 @@ DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		/usr/lib/qt/mkspecs/features/yacc.prf \
 		/usr/lib/qt/mkspecs/features/lex.prf \
 		Scoreboard.pro src/scoreboardmain.h \
-		src/overlay.h src/main.cpp \
+		src/overlay.h \
+		src/updatesvg.h src/main.cpp \
 		src/scoreboardmain.cpp \
-		src/overlay.cpp
+		src/overlay.cpp \
+		src/updatesvg.cpp
 QMAKE_TARGET  = Scoreboard
 DESTDIR       = bin/
 TARGET        = bin/Scoreboard
@@ -491,6 +495,7 @@ Makefile: Scoreboard.pro /usr/lib/qt/mkspecs/linux-g++/qmake.conf /usr/lib/qt/mk
 		/usr/lib/qt/mkspecs/features/lex.prf \
 		Scoreboard.pro \
 		/usr/lib/libQt5Multimedia.prl \
+		/usr/lib/libQt5Svg.prl \
 		/usr/lib/libQt5Widgets.prl \
 		/usr/lib/libQt5Gui.prl \
 		/usr/lib/libQt5Network.prl \
@@ -705,6 +710,7 @@ Makefile: Scoreboard.pro /usr/lib/qt/mkspecs/linux-g++/qmake.conf /usr/lib/qt/mk
 /usr/lib/qt/mkspecs/features/lex.prf:
 Scoreboard.pro:
 /usr/lib/libQt5Multimedia.prl:
+/usr/lib/libQt5Svg.prl:
 /usr/lib/libQt5Widgets.prl:
 /usr/lib/libQt5Gui.prl:
 /usr/lib/libQt5Network.prl:
@@ -725,8 +731,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/qt/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents src/scoreboardmain.h src/overlay.h $(DISTDIR)/
-	$(COPY_FILE) --parents src/main.cpp src/scoreboardmain.cpp src/overlay.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents src/scoreboardmain.h src/overlay.h src/updatesvg.h $(DISTDIR)/
+	$(COPY_FILE) --parents src/main.cpp src/scoreboardmain.cpp src/overlay.cpp src/updatesvg.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ui/scoreboardmain.ui ui/overlay.ui $(DISTDIR)/
 
 
@@ -766,12 +772,12 @@ build/moc_scoreboardmain.cpp: src/scoreboardmain.h \
 		src/overlay.h \
 		build/moc_predefs.h \
 		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include /home/bainer/Documents/Git/scoreboard/build/moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/bainer/Documents/Git/scoreboard -I/usr/include/qt -I/usr/include/qt/QtMultimedia -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtNetwork -I/usr/include/qt/QtXml -I/usr/include/qt/QtCore -I/usr/include/c++/8.2.1 -I/usr/include/c++/8.2.1/x86_64-pc-linux-gnu -I/usr/include/c++/8.2.1/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed -I/usr/include src/scoreboardmain.h -o build/moc_scoreboardmain.cpp
+	/usr/bin/moc $(DEFINES) --include /home/bainer/Documents/Git/scoreboard/build/moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/bainer/Documents/Git/scoreboard -I/usr/include/qt -I/usr/include/qt/QtMultimedia -I/usr/include/qt/QtSvg -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtNetwork -I/usr/include/qt/QtXml -I/usr/include/qt/QtCore -I/usr/include/c++/8.2.1 -I/usr/include/c++/8.2.1/x86_64-pc-linux-gnu -I/usr/include/c++/8.2.1/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed -I/usr/include src/scoreboardmain.h -o build/moc_scoreboardmain.cpp
 
 build/moc_overlay.cpp: src/overlay.h \
 		build/moc_predefs.h \
 		/usr/bin/moc
-	/usr/bin/moc $(DEFINES) --include /home/bainer/Documents/Git/scoreboard/build/moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/bainer/Documents/Git/scoreboard -I/usr/include/qt -I/usr/include/qt/QtMultimedia -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtNetwork -I/usr/include/qt/QtXml -I/usr/include/qt/QtCore -I/usr/include/c++/8.2.1 -I/usr/include/c++/8.2.1/x86_64-pc-linux-gnu -I/usr/include/c++/8.2.1/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed -I/usr/include src/overlay.h -o build/moc_overlay.cpp
+	/usr/bin/moc $(DEFINES) --include /home/bainer/Documents/Git/scoreboard/build/moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/bainer/Documents/Git/scoreboard -I/usr/include/qt -I/usr/include/qt/QtMultimedia -I/usr/include/qt/QtSvg -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtNetwork -I/usr/include/qt/QtXml -I/usr/include/qt/QtCore -I/usr/include/c++/8.2.1 -I/usr/include/c++/8.2.1/x86_64-pc-linux-gnu -I/usr/include/c++/8.2.1/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed -I/usr/include src/overlay.h -o build/moc_overlay.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -805,12 +811,17 @@ build/main.o: src/main.cpp src/scoreboardmain.h \
 build/scoreboardmain.o: src/scoreboardmain.cpp src/scoreboardmain.h \
 		src/overlay.h \
 		ui/ui_scoreboardmain.h \
-		ui/ui_overlay.h
+		ui/ui_overlay.h \
+		src/updatesvg.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/scoreboardmain.o src/scoreboardmain.cpp
 
 build/overlay.o: src/overlay.cpp src/overlay.h \
-		ui/ui_overlay.h
+		ui/ui_overlay.h \
+		src/updatesvg.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/overlay.o src/overlay.cpp
+
+build/updatesvg.o: src/updatesvg.cpp src/updatesvg.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/updatesvg.o src/updatesvg.cpp
 
 build/moc_scoreboardmain.o: build/moc_scoreboardmain.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/moc_scoreboardmain.o build/moc_scoreboardmain.cpp

@@ -8,6 +8,7 @@ QT       += core gui
 QT += network
 QT += multimedia
 QT += xml
+QT += svg
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -25,11 +26,13 @@ RCC_DIR=rcc
 CONFIG += releas
 SOURCES += src/main.cpp\
         src/scoreboardmain.cpp \
-    src/overlay.cpp
+    src/overlay.cpp \
+    src/updatesvg.cpp
 
 
 HEADERS  += src/scoreboardmain.h \
-    src/overlay.h
+    src/overlay.h \
+    src/updatesvg.h
 
 FORMS    += ui/scoreboardmain.ui \
     ui/overlay.ui

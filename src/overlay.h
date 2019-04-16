@@ -15,6 +15,8 @@ class Overlay: public QDialog
 public:
     explicit Overlay(QWidget *parent = 0);
     ~Overlay();
+    void loadScoreboard(QString filename);
+    void updateClock(QString clockText);
 public slots:
     void UpdateScoreboard(QString text);
     void ScoreboardShow(bool);

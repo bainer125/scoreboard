@@ -2,6 +2,7 @@
 #include "ui_scoreboardmain.h"
 #include "overlay.h"
 #include "ui_overlay.h"
+#include "updatesvg.h"
 #include <fstream>
 #include <ctime>
 #include <QTimer>
@@ -79,6 +80,8 @@ ScoreboardMain::~ScoreboardMain()
 void ScoreboardMain::Opened() //Resets all
 {
     writexml();
+
+    ol->loadScoreboard("./Graphics/dscbd.svg");
 
     QDir directory("./Teams");
 
@@ -831,6 +834,7 @@ void ScoreboardMain::updateClockView()
     else{
         clock_text = QString::number(minu) + ":" + QString::number(seco);
     }
+    ol->updateClock(clock_text);
 }
 
 void ScoreboardMain::on_Update_Timer_clicked()
