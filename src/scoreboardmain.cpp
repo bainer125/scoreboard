@@ -31,20 +31,18 @@ static int minu = 0, seco = 0, mseco = 0; //Minutes, Seconds, and Milliseconds i
 static int hp1m = 0, hp2m = 0, hp1s = 0, hp2s = 0, ap1m = 0, ap2m = 0, ap1s = 0, ap2s = 0; //Penalty times
 static int hp1=0, hp2=0, ap1=0, ap2=0; //Penalty checkboxes
 static int mins = 0, secs = 0; //Used for To_input
-static int saved_speed = 0, last_speed = 0; //Stored speed integer
+static int saved_speed = 0; //Stored speed integer
 static int speed = 100; //Speed integer | Default = 1000 (1seconds) | Milliseconds = 1000(0.1seconds)
 static int Clock_button = 0; //Start/Stop button
 static int Normal_Speed = 100, Millisecond_Speed = 93;
 static int PresetRadio = 4; //clock reset value
 
-static bool bol = false; //Open/Close for the server
 static bool many = false; //For milliseconds register
 static bool secflag = false; //when ms = 0 set flag
 static bool input_stop = false; //Stop getting the number from the input
 static bool getinput = false;
-static bool testplayer = false; //Test player button
 static bool to_switch; //On/Off for To_input
-static bool Milliseconds = true, Minute_Zero = false, Hotkey = false, Stopwatch_input = false; //On/Off for Milliseconds, Add zero to minute, Hotkey, Stopwatch
+static bool Milliseconds = true, Minute_Zero = false, Stopwatch_input = false; //On/Off for Milliseconds, Add zero to minute, Hotkey, Stopwatch
 static bool presetbool = true; //Preset timer
 static bool SecretIanButton = false; //Secret Ian Button
 
@@ -123,63 +121,8 @@ void ScoreboardMain::on_Reset_All_clicked()
 {
 }
 
-void ScoreboardMain::replyFinished(QNetworkReply *reply)
-{
-    string getstring = "";
-    size_t str;
-    int a = 0;
-    bool updateyes = false;
-    //Check if there is a error
-    if(reply->error())
-    {
-        ui->Testing->setText("Error: 0001, Not able to check for updates!");
-    }else{
-    ofstream textout;
-    textout.open("./out.txt");
-    //Read all from the url and writes to a file
-    textout << reply->readAll().toStdString();
-    textout.close();
-    ifstream textin;
-    textin.open("./out.txt");
-    if(textin.is_open())
-    {
-        while(getline(textin, getstring))
-        {
-            ui->Testing->setStyleSheet("QLabel{color: rgb(0, 0, 0);}");
-        str = getstring.find("Version_Info:_1_8_1_Dev");
-        if(str!=string::npos)
-        {
-            ui->Testing->setText("Status: No Update");
-            return;
-            break;
-            updateyes = true;
-        }
-        a++;
-        }
-        if(a > getstring.size() && updateyes == false)
-        {
-           ui->Testing->setStyleSheet("QLabel{color: rgb(255, 0, 0);}");
-           ui->Testing->setText("Status: New Update Found! Please Update This Program!");
-           WarningBox();
-        }
-    }
-    textin.close();
-    }
-    reply->deleteLater();
-}
-
 int stopreply = 0;
 
-
-void ScoreboardMain::WarningBox()
-{
-    if(stopreply == 0)
-    {
-       QMessageBox::warning(this,"New Update Found", "<a href=https://obsproject.com/forum/resources/scoreboard-windows-mac.150>Update Download</a>");
-       stopreply = 1;
-    }else{
-    }
-}
 
 void ScoreboardMain::on_show_score_clicked(){
     if(ui->show_score->isChecked()){
@@ -1373,240 +1316,6 @@ void ScoreboardMain::on_Countdown_Checkbox_clicked(bool countdown)
     getinput = countdown;
 }
 
-void ScoreboardMain::on_About_ActionBar_triggered()
-{
-    QMessageBox about;
-    about.setText("About");
-    about.setInformativeText("                                                                                                                  ");
-    about.setInformativeText("This Program is made by: ha0511kr \n Idea by: XxRocketShotxX \n Adding Soon: \n "
-                             "-Able to set hotkeys \n -Adding Icon to the program \n -Fix Glitches and Bugs from the Timer or Scoreboard \n"
-                             " -And all of your suggetions \n"
-                             "\nIf you have any questions or suggetions please contact me in \n"
-                             "Email: ha0511kr.com@gmail.com \n"
-                             "OBS fourm page disscusion \n"
-                             "\nThank you for downloading and enjoy the scoreboard and timer");
-    about.exec();
-}
-
-void ScoreboardMain::on_ChangeLog_ActionBar_triggered()
-{
-    QMessageBox Changelog;
-    Changelog.setText("Changelog:");
-    Changelog.setInformativeText("1.3Dev: \n"
-                           "-Added Hotkeys\n"
-                           "-Able to change team names\n"
-                           "-Fixed Glitches and bugs\n"
-                           "1.7Dev: \n"
-                           "-Added hotkey for Timer/Stopwatch \n"
-                           "-Added Stopwatch\n"
-                           "-Added ToolBar\n"
-                           "-Able to use hotkey anytime without timer/stopwatch being on\n"
-                           "-Fixed Glitches and bugs\n"
-                           "1.7.5Dev: \n"
-                           "-Added sec to stopwatch\n"
-                           "-Fixed bug with Timer and Stopwatch\n"
-                           "-Added Feature from Jules_B: Stopwatch stopping in predefined time\n"
-                           "1.7.9Dev: \n"
-                           "-Added Swap Button\n"
-                           "-Added +2 for Basketball\n"
-                           "-Fixed Bug with Stopwatch/Timer\n"
-                           "1.7.10Dev: \n"
-                           "Fix Bugs and Glitches \n"
-                           "Added Countdown Input Box for easy use \n"
-                           "Added Reset Score button \n"
-                           "Better Look for setting tab \n"
-                           "Changed button size and name ex: Update Teamname -> Update TeamN \n"
-                           "Added Console Tab Coming soon. \n"
-                           "-------------------------------------------------------------------------\n"
-                           "Coming Soon:\n"
-                           "Console Tab\n"
-                           "And More... Please leave a suggestions in the comments");
-    Changelog.exec();
-}
-
-void ScoreboardMain::on_pushButton_clicked()
-{
-    if(bol == false)
-    {
-    //Connects to Acceptconnection if they are connected
-    connect(&server, SIGNAL(newConnection()),this, SLOT(acceptConnection()));
-    //Server is listening to the IP and port
-    server.listen(QHostAddress::Any, 1234);
-    ui->Status->setStyleSheet("QLabel {color: rgb(225, 227, 0);}");
-    ui->Status->setText("Status: Listening");
-    ui->pushButton->setText("Disable Listen");
-    QMessageBox::warning(this, tr("Warning!"), tr("Please know that remote feature is in beta.\nIt could crash the program."), QMessageBox::Ok);
-    bol = true;
-    }else if(bol == true){
-        server.close();
-        server.disconnect();
-        if(!client->isOpen())
-        {
-        client->close();
-        }
-        ui->pushButton->setText("Enable");
-        ui->Status->setStyleSheet("QLabel {color: rgb(255, 0, 0);}");
-        ui->Status->setText("Status: Not Connected");
-        bol = false;
-    }
-}
-
-void ScoreboardMain::startRead()
-{
-    //Loops if server can read string from the client
-    while(client->canReadLine())
-    {
-    //Reads from the client and put it to QString line
-    QString line = QString::fromUtf8(client->readLine()).trimmed();
-
-    if(line == "Home_Up")
-    {
-        Home_Score++;
-        Changed();
-        //Writes/Sends string/Score to the client
-        client->write("Home_Score:" + QByteArray::number(Home_Score));
-    }
-    if(line == "Away_Up")
-    {
-        Away_Score++;
-        Changed();
-        client->write("Away_Score:" + QByteArray::number(Away_Score));
-    }
-    if(line == "Home_Down")
-    {
-        Home_Score--;
-        Changed();
-        client->write("Home_Score:" + QByteArray::number(Home_Score));
-    }
-    if(line == "Away_Down")
-    {
-        Away_Score--;
-        Changed();
-        client->write("Away_Score:" + QByteArray::number(Away_Score));
-    }
-    if(line == "Period_Up")
-    {
-        Period++;
-        Changed();
-        client->write("Period:" + QByteArray::number(Period));
-    }
-    if(line == "Period_Down")
-    {
-        Period--;
-        Changed();
-        client->write("Period:" + QByteArray::number(Period));
-    }
-    if(line == "Clock_Button")
-    {
-        on_Start_Button_clicked();
-        client->write("Clock_Button:" + QByteArray::fromStdString(ui->Start_Button->text().toUtf8().constData()));
-    }
-    if(line.contains("Min:"))
-    {
-        line.remove("Min:");
-        int minui = line.toInt();
-        ui->Minutes_Input->setValue(minui);
-        minu = minui;
-    }
-    if(line.contains("Sec:"))
-    {
-        line.remove("Sec:");
-        int secoi = line.toInt();
-        ui->Seconds_Input->setValue(secoi);
-        seco = secoi;
-    }
-    if(line.contains("Home_Name:"))
-    {
-        line.remove("Home_Name:");
-        ui->HomeName_Input->setText(line);
-        on_Update_Team_Button_clicked();
-    }
-    if(line.contains("Away_Name:"))
-    {
-        line.remove("Away_Name:");
-        ui->AwayName_Input->setText(line);
-        on_Update_Team_Button_clicked();
-    }
-    if(line == "Reset")
-    {
-        on_Reset_Button_clicked();
-    }
-    if(line == "Stop_Watch")
-    {
-        Stopwatch_input = true;
-    }
-    if(line == "Stop_Watch_Stop")
-    {
-        Stopwatch_input = false;
-    }
-    if(line == "Current_Time")
-    {
-        on_CurrentTime_Checkbox_clicked(true);
-    }
-    if(line == "Current_Time_Stop")
-    {
-        on_CurrentTime_Checkbox_clicked(false);
-    }
-    if(line == "Reset_Score")
-    {
-        Away_Score = 0;
-        Home_Score = 0;
-        Changed();
-    }
-    ui->Status->setText("Client says: " + line);
-    }
-}
-
-
-void ScoreboardMain::acceptConnection()
-{
-    //Connecting to the next pending connection
-    client = server.nextPendingConnection();
-    //Set status to Connected
-    ui->Status->setStyleSheet("QLabel {color: rgb(0, 220, 0);}");
-    ui->Status->setText("Status: Connected! From: " + client->peerAddress().toString() + ":" + QString::number(client->peerPort()));
-    client->write("Connected to Scoreboard+ \n");
-    ui->pushButton->setText("Disable");
-    //Connect to the startread to read from the client
-    connect(client, SIGNAL(readyRead()),this,SLOT(startRead()));
-}
-
-void ScoreboardMain::on_actionSickmind33_triggered()
-{
-    QMessageBox Sick;
-    Sick.setText("About: Sickmind33");
-    Sick.setInformativeText("Thank you to Sickmind33 for creating an awesome icon!\nPress Ok to continue");
-    Sick.exec();
-}
-
-void ScoreboardMain::on_PlaySound_Checkbox_clicked(bool checked10)
-{
-    if(checked10 == true)
-    {
-        ui->Browsefile_Button->setEnabled(true);
-        ui->BrowseFile_Input->setEnabled(true);
-        ui->horizontalSlider->setEnabled(true);
-        ui->TestSound_Button->setEnabled(true);
-        ui->SoundSpeed_Slider->setEnabled(true);
-    }
-    if(ui->TestSound_Button->text() == "Stop Sound")
-    {
-        ui->PlaySound_Checkbox->setChecked(true);
-        ui->Warning_Label->setVisible(true);
-    }else{
-    if(checked10 == false)
-    {
-        ui->Warning_Label->setVisible(false);
-         ui->TestSound_Button->setDisabled(true);
-        ui->horizontalSlider->setDisabled(true);
-        ui->Browsefile_Button->setDisabled(true);
-        ui->BrowseFile_Input->setDisabled(true);
-        ui->BrowseFile_Input->setText("");
-        ui->SoundSpeed_Slider->setDisabled(true);
-    }
-    }
-}
-
 void ScoreboardMain::on_Browsefile_Button_clicked()
 {
     QString Filename = QFileDialog::getOpenFileName(this, tr("Open File"), "C://", "All files (*.*);; mp3 File (*.mp3)");
@@ -1621,43 +1330,6 @@ void ScoreboardMain::on_BrowseFile_Input_textChanged(const QString &arg1)
     connect(player,SIGNAL(positionChanged(qint64)),this,SLOT(putduration()));
 }
 
-void ScoreboardMain::putduration()
-{
-    ui->Testing->setText(player->metaData(QMediaMetaData::Title).toString());
-}
-
-void ScoreboardMain::on_StopMusic_Button_clicked()
-{
-    player->stop();
-    ui->Testing->setText("Error:");
-    player->setPosition(0);
-    ui->StopMusic_Button->setVisible(false);
-    ui->TestSound_Button->setText("Test Sound");
-}
-
-void ScoreboardMain::on_horizontalSlider_sliderMoved(int position)
-{
-    player->setVolume(position);
-}
-
-
-
-void ScoreboardMain::on_TestSound_Button_clicked()
-{
-    if(testplayer == false && !(ui->BrowseFile_Input->text().isEmpty()))
-    {
-        player->play();
-        testplayer = true;
-        ui->TestSound_Button->setText("Stop Sound");
-    }else if(testplayer == true && !(ui->BrowseFile_Input->text().isEmpty())){
-        player->stop();
-        ui->Testing->setText("Error:");
-        testplayer = false;
-        ui->TestSound_Button->setText("Test Sound");
-        ui->StopMusic_Button->setVisible(false);
-    }
-}
-
 bool truefalse = false;
 
 void ScoreboardMain::on_Speed_CheckBox_clicked(bool checked11)
@@ -1668,11 +1340,6 @@ void ScoreboardMain::on_Speed_CheckBox_clicked(bool checked11)
     }else if(checked11 == true){
         truefalse = true;
     }
-}
-
-void ScoreboardMain::on_SpeedHelp_Button_clicked()
-{
-    QMessageBox::warning(this,"Speed Help","Use this when your game timer/stopwatch is faster then this program\nDefault: 1000 = 1 sec");
 }
 
 void ScoreboardMain::on_Speed_Input_valueChanged(int arg13)
@@ -1743,14 +1410,6 @@ void ScoreboardMain::on_TwentyP_Radio_clicked()
     }
 }
 
-void ScoreboardMain::on_actionXxRocketshotxX_triggered()
-{
-    QMessageBox Xx;
-    Xx.setText("About: XxRocketshotxX");
-    Xx.setInformativeText("Thank you an idea of Scoreboard+!");
-    Xx.exec();
-}
-
 void ScoreboardMain::xml()
 {
     //Creates QFile to the directory
@@ -1807,16 +1466,6 @@ void ScoreboardMain::on_checkBox_clicked(bool checked20)
         QFile::remove("./Xml.xml");
         QFile::remove("./out.txt");
     }
-}
-
-void ScoreboardMain::on_SoundSpeed_Slider_sliderMoved(int slidepos)
-{
-    qreal test = (qreal)slidepos;
-    if(test < 0.0)
-    {
-        test = -0.9;
-    }
-    player->setPlaybackRate(test);
 }
 
 void ScoreboardMain::closeEvent(QCloseEvent *)

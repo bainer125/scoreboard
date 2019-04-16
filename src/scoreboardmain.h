@@ -144,33 +144,11 @@ private slots:
 
     void on_Countdown_Checkbox_clicked(bool countdown);
 
-    void on_About_ActionBar_triggered();
-
-    void on_ChangeLog_ActionBar_triggered();
-
-    void on_pushButton_clicked();
-
-    void acceptConnection();
-
-    void startRead();
-
-    void on_actionSickmind33_triggered();
-
-    void on_PlaySound_Checkbox_clicked(bool checked10);
-
     void on_Browsefile_Button_clicked();
 
     void on_BrowseFile_Input_textChanged(const QString &arg1);
 
-    void on_StopMusic_Button_clicked();
-
-    void on_horizontalSlider_sliderMoved(int position);
-
-    void on_TestSound_Button_clicked();
-
     void on_Speed_CheckBox_clicked(bool checked11);
-
-    void on_SpeedHelp_Button_clicked();
 
     void on_Speed_Input_valueChanged(int arg13);
 
@@ -186,19 +164,11 @@ private slots:
 
     void on_TwentyP_Radio_clicked();
 
-    void on_actionXxRocketshotxX_triggered();
-
     void xml();
 
     void on_checkBox_clicked(bool checked20);
 
     void writexml();
-
-    void replyFinished(QNetworkReply *reply);
-
-    void on_SoundSpeed_Slider_sliderMoved(int slidepos);
-
-    void putduration();
 
 protected:
 private:

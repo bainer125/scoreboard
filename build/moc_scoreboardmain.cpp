@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_ScoreboardMain_t {
-    QByteArrayData data[109];
-    char stringdata0[2124];
+    QByteArrayData data[89];
+    char stringdata0[1695];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -103,43 +103,23 @@ QT_MOC_LITERAL(68, 1284, 32), // "on_Milliseconds_Checkbox_clicked"
 QT_MOC_LITERAL(69, 1317, 5), // "milli"
 QT_MOC_LITERAL(70, 1323, 29), // "on_Countdown_Checkbox_clicked"
 QT_MOC_LITERAL(71, 1353, 9), // "countdown"
-QT_MOC_LITERAL(72, 1363, 28), // "on_About_ActionBar_triggered"
-QT_MOC_LITERAL(73, 1392, 32), // "on_ChangeLog_ActionBar_triggered"
-QT_MOC_LITERAL(74, 1425, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(75, 1447, 16), // "acceptConnection"
-QT_MOC_LITERAL(76, 1464, 9), // "startRead"
-QT_MOC_LITERAL(77, 1474, 29), // "on_actionSickmind33_triggered"
-QT_MOC_LITERAL(78, 1504, 29), // "on_PlaySound_Checkbox_clicked"
-QT_MOC_LITERAL(79, 1534, 9), // "checked10"
-QT_MOC_LITERAL(80, 1544, 28), // "on_Browsefile_Button_clicked"
-QT_MOC_LITERAL(81, 1573, 31), // "on_BrowseFile_Input_textChanged"
-QT_MOC_LITERAL(82, 1605, 27), // "on_StopMusic_Button_clicked"
-QT_MOC_LITERAL(83, 1633, 31), // "on_horizontalSlider_sliderMoved"
-QT_MOC_LITERAL(84, 1665, 8), // "position"
-QT_MOC_LITERAL(85, 1674, 27), // "on_TestSound_Button_clicked"
-QT_MOC_LITERAL(86, 1702, 25), // "on_Speed_CheckBox_clicked"
-QT_MOC_LITERAL(87, 1728, 9), // "checked11"
-QT_MOC_LITERAL(88, 1738, 27), // "on_SpeedHelp_Button_clicked"
-QT_MOC_LITERAL(89, 1766, 27), // "on_Speed_Input_valueChanged"
-QT_MOC_LITERAL(90, 1794, 5), // "arg13"
-QT_MOC_LITERAL(91, 1800, 19), // "ifclockinputchanged"
-QT_MOC_LITERAL(92, 1820, 31), // "on_TimerPreset_Checkbox_clicked"
-QT_MOC_LITERAL(93, 1852, 9), // "checked15"
-QT_MOC_LITERAL(94, 1862, 22), // "on_FiveP_Radio_clicked"
-QT_MOC_LITERAL(95, 1885, 21), // "on_TenP_Radio_clicked"
-QT_MOC_LITERAL(96, 1907, 25), // "on_FifteenP_Radio_clicked"
-QT_MOC_LITERAL(97, 1933, 24), // "on_TwentyP_Radio_clicked"
-QT_MOC_LITERAL(98, 1958, 33), // "on_actionXxRocketshotxX_trigg..."
-QT_MOC_LITERAL(99, 1992, 3), // "xml"
-QT_MOC_LITERAL(100, 1996, 19), // "on_checkBox_clicked"
-QT_MOC_LITERAL(101, 2016, 9), // "checked20"
-QT_MOC_LITERAL(102, 2026, 8), // "writexml"
-QT_MOC_LITERAL(103, 2035, 13), // "replyFinished"
-QT_MOC_LITERAL(104, 2049, 14), // "QNetworkReply*"
-QT_MOC_LITERAL(105, 2064, 5), // "reply"
-QT_MOC_LITERAL(106, 2070, 32), // "on_SoundSpeed_Slider_sliderMoved"
-QT_MOC_LITERAL(107, 2103, 8), // "slidepos"
-QT_MOC_LITERAL(108, 2112, 11) // "putduration"
+QT_MOC_LITERAL(72, 1363, 28), // "on_Browsefile_Button_clicked"
+QT_MOC_LITERAL(73, 1392, 31), // "on_BrowseFile_Input_textChanged"
+QT_MOC_LITERAL(74, 1424, 25), // "on_Speed_CheckBox_clicked"
+QT_MOC_LITERAL(75, 1450, 9), // "checked11"
+QT_MOC_LITERAL(76, 1460, 27), // "on_Speed_Input_valueChanged"
+QT_MOC_LITERAL(77, 1488, 5), // "arg13"
+QT_MOC_LITERAL(78, 1494, 19), // "ifclockinputchanged"
+QT_MOC_LITERAL(79, 1514, 31), // "on_TimerPreset_Checkbox_clicked"
+QT_MOC_LITERAL(80, 1546, 9), // "checked15"
+QT_MOC_LITERAL(81, 1556, 22), // "on_FiveP_Radio_clicked"
+QT_MOC_LITERAL(82, 1579, 21), // "on_TenP_Radio_clicked"
+QT_MOC_LITERAL(83, 1601, 25), // "on_FifteenP_Radio_clicked"
+QT_MOC_LITERAL(84, 1627, 24), // "on_TwentyP_Radio_clicked"
+QT_MOC_LITERAL(85, 1652, 3), // "xml"
+QT_MOC_LITERAL(86, 1656, 19), // "on_checkBox_clicked"
+QT_MOC_LITERAL(87, 1676, 9), // "checked20"
+QT_MOC_LITERAL(88, 1686, 8) // "writexml"
 
     },
     "ScoreboardMain\0on_show_score_clicked\0"
@@ -182,28 +162,15 @@ QT_MOC_LITERAL(108, 2112, 11) // "putduration"
     "timeclock\0on_Stopwatch_Checkbox_clicked\0"
     "stop\0on_Milliseconds_Checkbox_clicked\0"
     "milli\0on_Countdown_Checkbox_clicked\0"
-    "countdown\0on_About_ActionBar_triggered\0"
-    "on_ChangeLog_ActionBar_triggered\0"
-    "on_pushButton_clicked\0acceptConnection\0"
-    "startRead\0on_actionSickmind33_triggered\0"
-    "on_PlaySound_Checkbox_clicked\0checked10\0"
-    "on_Browsefile_Button_clicked\0"
+    "countdown\0on_Browsefile_Button_clicked\0"
     "on_BrowseFile_Input_textChanged\0"
-    "on_StopMusic_Button_clicked\0"
-    "on_horizontalSlider_sliderMoved\0"
-    "position\0on_TestSound_Button_clicked\0"
     "on_Speed_CheckBox_clicked\0checked11\0"
-    "on_SpeedHelp_Button_clicked\0"
     "on_Speed_Input_valueChanged\0arg13\0"
     "ifclockinputchanged\0on_TimerPreset_Checkbox_clicked\0"
     "checked15\0on_FiveP_Radio_clicked\0"
     "on_TenP_Radio_clicked\0on_FifteenP_Radio_clicked\0"
-    "on_TwentyP_Radio_clicked\0"
-    "on_actionXxRocketshotxX_triggered\0xml\0"
-    "on_checkBox_clicked\0checked20\0writexml\0"
-    "replyFinished\0QNetworkReply*\0reply\0"
-    "on_SoundSpeed_Slider_sliderMoved\0"
-    "slidepos\0putduration"
+    "on_TwentyP_Radio_clicked\0xml\0"
+    "on_checkBox_clicked\0checked20\0writexml"
 };
 #undef QT_MOC_LITERAL
 
@@ -213,7 +180,7 @@ static const uint qt_meta_data_ScoreboardMain[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      85,   14, // methods
+      70,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -221,91 +188,76 @@ static const uint qt_meta_data_ScoreboardMain[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  439,    2, 0x08 /* Private */,
-       3,    0,  440,    2, 0x08 /* Private */,
-       4,    0,  441,    2, 0x08 /* Private */,
-       5,    1,  442,    2, 0x08 /* Private */,
-       7,    1,  445,    2, 0x08 /* Private */,
-       9,    0,  448,    2, 0x08 /* Private */,
-      10,    0,  449,    2, 0x08 /* Private */,
-      11,    0,  450,    2, 0x08 /* Private */,
-      12,    0,  451,    2, 0x08 /* Private */,
-      13,    0,  452,    2, 0x08 /* Private */,
-      14,    0,  453,    2, 0x08 /* Private */,
-      15,    0,  454,    2, 0x08 /* Private */,
-      16,    0,  455,    2, 0x08 /* Private */,
-      17,    0,  456,    2, 0x08 /* Private */,
-      18,    0,  457,    2, 0x08 /* Private */,
-      19,    0,  458,    2, 0x08 /* Private */,
-      20,    0,  459,    2, 0x08 /* Private */,
-      21,    0,  460,    2, 0x08 /* Private */,
-      22,    0,  461,    2, 0x08 /* Private */,
-      23,    0,  462,    2, 0x08 /* Private */,
-      24,    0,  463,    2, 0x08 /* Private */,
-      25,    0,  464,    2, 0x08 /* Private */,
-      26,    0,  465,    2, 0x08 /* Private */,
-      27,    0,  466,    2, 0x08 /* Private */,
-      28,    0,  467,    2, 0x08 /* Private */,
-      29,    0,  468,    2, 0x08 /* Private */,
-      30,    0,  469,    2, 0x08 /* Private */,
-      31,    0,  470,    2, 0x08 /* Private */,
-      32,    0,  471,    2, 0x08 /* Private */,
-      33,    0,  472,    2, 0x08 /* Private */,
-      34,    0,  473,    2, 0x08 /* Private */,
-      35,    0,  474,    2, 0x08 /* Private */,
-      36,    0,  475,    2, 0x08 /* Private */,
-      37,    0,  476,    2, 0x08 /* Private */,
-      38,    0,  477,    2, 0x08 /* Private */,
-      39,    0,  478,    2, 0x08 /* Private */,
-      40,    0,  479,    2, 0x08 /* Private */,
-      41,    0,  480,    2, 0x08 /* Private */,
-      42,    0,  481,    2, 0x08 /* Private */,
-      43,    1,  482,    2, 0x08 /* Private */,
-      45,    0,  485,    2, 0x08 /* Private */,
-      46,    0,  486,    2, 0x08 /* Private */,
-      47,    0,  487,    2, 0x08 /* Private */,
-      48,    0,  488,    2, 0x08 /* Private */,
-      49,    0,  489,    2, 0x08 /* Private */,
-      50,    0,  490,    2, 0x08 /* Private */,
-      51,    1,  491,    2, 0x08 /* Private */,
-      53,    1,  494,    2, 0x08 /* Private */,
-      55,    1,  497,    2, 0x08 /* Private */,
-      57,    1,  500,    2, 0x08 /* Private */,
-      59,    1,  503,    2, 0x08 /* Private */,
-      61,    1,  506,    2, 0x08 /* Private */,
-      63,    1,  509,    2, 0x08 /* Private */,
-      65,    0,  512,    2, 0x08 /* Private */,
-      66,    1,  513,    2, 0x08 /* Private */,
-      68,    1,  516,    2, 0x08 /* Private */,
-      70,    1,  519,    2, 0x08 /* Private */,
-      72,    0,  522,    2, 0x08 /* Private */,
-      73,    0,  523,    2, 0x08 /* Private */,
-      74,    0,  524,    2, 0x08 /* Private */,
-      75,    0,  525,    2, 0x08 /* Private */,
-      76,    0,  526,    2, 0x08 /* Private */,
-      77,    0,  527,    2, 0x08 /* Private */,
-      78,    1,  528,    2, 0x08 /* Private */,
-      80,    0,  531,    2, 0x08 /* Private */,
-      81,    1,  532,    2, 0x08 /* Private */,
-      82,    0,  535,    2, 0x08 /* Private */,
-      83,    1,  536,    2, 0x08 /* Private */,
-      85,    0,  539,    2, 0x08 /* Private */,
-      86,    1,  540,    2, 0x08 /* Private */,
-      88,    0,  543,    2, 0x08 /* Private */,
-      89,    1,  544,    2, 0x08 /* Private */,
-      91,    0,  547,    2, 0x08 /* Private */,
-      92,    1,  548,    2, 0x08 /* Private */,
-      94,    0,  551,    2, 0x08 /* Private */,
-      95,    0,  552,    2, 0x08 /* Private */,
-      96,    0,  553,    2, 0x08 /* Private */,
-      97,    0,  554,    2, 0x08 /* Private */,
-      98,    0,  555,    2, 0x08 /* Private */,
-      99,    0,  556,    2, 0x08 /* Private */,
-     100,    1,  557,    2, 0x08 /* Private */,
-     102,    0,  560,    2, 0x08 /* Private */,
-     103,    1,  561,    2, 0x08 /* Private */,
-     106,    1,  564,    2, 0x08 /* Private */,
-     108,    0,  567,    2, 0x08 /* Private */,
+       1,    0,  364,    2, 0x08 /* Private */,
+       3,    0,  365,    2, 0x08 /* Private */,
+       4,    0,  366,    2, 0x08 /* Private */,
+       5,    1,  367,    2, 0x08 /* Private */,
+       7,    1,  370,    2, 0x08 /* Private */,
+       9,    0,  373,    2, 0x08 /* Private */,
+      10,    0,  374,    2, 0x08 /* Private */,
+      11,    0,  375,    2, 0x08 /* Private */,
+      12,    0,  376,    2, 0x08 /* Private */,
+      13,    0,  377,    2, 0x08 /* Private */,
+      14,    0,  378,    2, 0x08 /* Private */,
+      15,    0,  379,    2, 0x08 /* Private */,
+      16,    0,  380,    2, 0x08 /* Private */,
+      17,    0,  381,    2, 0x08 /* Private */,
+      18,    0,  382,    2, 0x08 /* Private */,
+      19,    0,  383,    2, 0x08 /* Private */,
+      20,    0,  384,    2, 0x08 /* Private */,
+      21,    0,  385,    2, 0x08 /* Private */,
+      22,    0,  386,    2, 0x08 /* Private */,
+      23,    0,  387,    2, 0x08 /* Private */,
+      24,    0,  388,    2, 0x08 /* Private */,
+      25,    0,  389,    2, 0x08 /* Private */,
+      26,    0,  390,    2, 0x08 /* Private */,
+      27,    0,  391,    2, 0x08 /* Private */,
+      28,    0,  392,    2, 0x08 /* Private */,
+      29,    0,  393,    2, 0x08 /* Private */,
+      30,    0,  394,    2, 0x08 /* Private */,
+      31,    0,  395,    2, 0x08 /* Private */,
+      32,    0,  396,    2, 0x08 /* Private */,
+      33,    0,  397,    2, 0x08 /* Private */,
+      34,    0,  398,    2, 0x08 /* Private */,
+      35,    0,  399,    2, 0x08 /* Private */,
+      36,    0,  400,    2, 0x08 /* Private */,
+      37,    0,  401,    2, 0x08 /* Private */,
+      38,    0,  402,    2, 0x08 /* Private */,
+      39,    0,  403,    2, 0x08 /* Private */,
+      40,    0,  404,    2, 0x08 /* Private */,
+      41,    0,  405,    2, 0x08 /* Private */,
+      42,    0,  406,    2, 0x08 /* Private */,
+      43,    1,  407,    2, 0x08 /* Private */,
+      45,    0,  410,    2, 0x08 /* Private */,
+      46,    0,  411,    2, 0x08 /* Private */,
+      47,    0,  412,    2, 0x08 /* Private */,
+      48,    0,  413,    2, 0x08 /* Private */,
+      49,    0,  414,    2, 0x08 /* Private */,
+      50,    0,  415,    2, 0x08 /* Private */,
+      51,    1,  416,    2, 0x08 /* Private */,
+      53,    1,  419,    2, 0x08 /* Private */,
+      55,    1,  422,    2, 0x08 /* Private */,
+      57,    1,  425,    2, 0x08 /* Private */,
+      59,    1,  428,    2, 0x08 /* Private */,
+      61,    1,  431,    2, 0x08 /* Private */,
+      63,    1,  434,    2, 0x08 /* Private */,
+      65,    0,  437,    2, 0x08 /* Private */,
+      66,    1,  438,    2, 0x08 /* Private */,
+      68,    1,  441,    2, 0x08 /* Private */,
+      70,    1,  444,    2, 0x08 /* Private */,
+      72,    0,  447,    2, 0x08 /* Private */,
+      73,    1,  448,    2, 0x08 /* Private */,
+      74,    1,  451,    2, 0x08 /* Private */,
+      76,    1,  454,    2, 0x08 /* Private */,
+      78,    0,  457,    2, 0x08 /* Private */,
+      79,    1,  458,    2, 0x08 /* Private */,
+      81,    0,  461,    2, 0x08 /* Private */,
+      82,    0,  462,    2, 0x08 /* Private */,
+      83,    0,  463,    2, 0x08 /* Private */,
+      84,    0,  464,    2, 0x08 /* Private */,
+      85,    0,  465,    2, 0x08 /* Private */,
+      86,    1,  466,    2, 0x08 /* Private */,
+      88,    0,  469,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -366,32 +318,17 @@ static const uint qt_meta_data_ScoreboardMain[] = {
     QMetaType::Void, QMetaType::Bool,   69,
     QMetaType::Void, QMetaType::Bool,   71,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,   79,
-    QMetaType::Void,
     QMetaType::Void, QMetaType::QString,   56,
+    QMetaType::Void, QMetaType::Bool,   75,
+    QMetaType::Void, QMetaType::Int,   77,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   84,
+    QMetaType::Void, QMetaType::Bool,   80,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Bool,   87,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   90,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,   93,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,  101,
-    QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 104,  105,
-    QMetaType::Void, QMetaType::Int,  107,
     QMetaType::Void,
 
        0        // eod
@@ -460,46 +397,20 @@ void ScoreboardMain::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 54: _t->on_Stopwatch_Checkbox_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 55: _t->on_Milliseconds_Checkbox_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 56: _t->on_Countdown_Checkbox_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 57: _t->on_About_ActionBar_triggered(); break;
-        case 58: _t->on_ChangeLog_ActionBar_triggered(); break;
-        case 59: _t->on_pushButton_clicked(); break;
-        case 60: _t->acceptConnection(); break;
-        case 61: _t->startRead(); break;
-        case 62: _t->on_actionSickmind33_triggered(); break;
-        case 63: _t->on_PlaySound_Checkbox_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 64: _t->on_Browsefile_Button_clicked(); break;
-        case 65: _t->on_BrowseFile_Input_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 66: _t->on_StopMusic_Button_clicked(); break;
-        case 67: _t->on_horizontalSlider_sliderMoved((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 68: _t->on_TestSound_Button_clicked(); break;
-        case 69: _t->on_Speed_CheckBox_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 70: _t->on_SpeedHelp_Button_clicked(); break;
-        case 71: _t->on_Speed_Input_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 72: _t->ifclockinputchanged(); break;
-        case 73: _t->on_TimerPreset_Checkbox_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 74: _t->on_FiveP_Radio_clicked(); break;
-        case 75: _t->on_TenP_Radio_clicked(); break;
-        case 76: _t->on_FifteenP_Radio_clicked(); break;
-        case 77: _t->on_TwentyP_Radio_clicked(); break;
-        case 78: _t->on_actionXxRocketshotxX_triggered(); break;
-        case 79: _t->xml(); break;
-        case 80: _t->on_checkBox_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 81: _t->writexml(); break;
-        case 82: _t->replyFinished((*reinterpret_cast< QNetworkReply*(*)>(_a[1]))); break;
-        case 83: _t->on_SoundSpeed_Slider_sliderMoved((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 84: _t->putduration(); break;
+        case 57: _t->on_Browsefile_Button_clicked(); break;
+        case 58: _t->on_BrowseFile_Input_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 59: _t->on_Speed_CheckBox_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 60: _t->on_Speed_Input_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 61: _t->ifclockinputchanged(); break;
+        case 62: _t->on_TimerPreset_Checkbox_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 63: _t->on_FiveP_Radio_clicked(); break;
+        case 64: _t->on_TenP_Radio_clicked(); break;
+        case 65: _t->on_FifteenP_Radio_clicked(); break;
+        case 66: _t->on_TwentyP_Radio_clicked(); break;
+        case 67: _t->xml(); break;
+        case 68: _t->on_checkBox_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 69: _t->writexml(); break;
         default: ;
-        }
-    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        switch (_id) {
-        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 82:
-            switch (*reinterpret_cast<int*>(_a[1])) {
-            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-            case 0:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QNetworkReply* >(); break;
-            }
-            break;
         }
     }
 }
@@ -533,13 +444,13 @@ int ScoreboardMain::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 85)
+        if (_id < 70)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 85;
+        _id -= 70;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 85)
-            qt_static_metacall(this, _c, _id, _a);
-        _id -= 85;
+        if (_id < 70)
+            *reinterpret_cast<int*>(_a[0]) = -1;
+        _id -= 70;
     }
     return _id;
 }
