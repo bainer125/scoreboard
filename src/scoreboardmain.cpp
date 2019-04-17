@@ -199,7 +199,7 @@ void ScoreboardMain::Changed() //Changed Score,etc
     {
         writexml();
     }
-
+    ol->updateScore(Home_Score, Away_Score);
     ui->HomeScore_Label->setText(QString::number(Home_Score));
     ui->AwayScore_Label->setText(QString::number(Away_Score));
     ui->Period_Label->setText(QString::number(Period));
@@ -344,7 +344,7 @@ void ScoreboardMain::on_Update_Team_Button_clicked() //Update Team Name Button
     QString awayback = "background: url(./Teams/";
     awayback.append(ui->Away_Option->currentText());
     awayback.append("/itmsn_away.png)");
-    ol->updateTeams("RPI","ARMY",QString::fromStdString("fill:"+home_color),QString::fromStdString("fill:"+away_color));
+    ol->updateTeams(HomeN,AwayN,QString::fromStdString("fill:"+home_color),QString::fromStdString("fill:"+away_color));
 }
 
 void ScoreboardMain::on_Reset_Score_Button_clicked() //Reset Score Button

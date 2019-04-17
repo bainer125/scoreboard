@@ -22,7 +22,8 @@ static updatesvg svg;
 
 static QFile intermission;
 static QByteArray scbdData;
-static QString clockText = "clockText", homeName = "homeName", awayName = "awayName", homeScore, awayScore;
+static QString clockText = "clockText", homeName = "homeName", awayName = "awayName", homeScore = "homeScore", awayScore = "awayScore";
+static QString homeShots = "homeShots", awayShots = "awayShots";
 static QString homeColor = "homeColor", awayColor = "awayColor";
 
 Overlay::Overlay(QWidget *parent) :
@@ -38,18 +39,9 @@ Overlay::~Overlay()
     delete ui;
 }
 
-void Overlay::UpdateScoreboard(QString text)
-{
-}
-
 void Overlay::updateClock(QString clock_text){
     scbdData=svg.updateVal(scbdData,clockText,clock_text);
-    QSvgRenderer otherrender(scbdData);
-    QPixmap othergraphic(otherrender.defaultSize());
-    othergraphic.fill(Qt::transparent);
-    QPainter pixPainter(&othergraphic);
-    otherrender.render(&pixPainter);
-    ui->Scoreboard->setPixmap(othergraphic);
+    paintScoreboard(scbdData);
 }
 
 void Overlay::updateTeams(QString home_name, QString away_name, QString home_color, QString away_color){
@@ -58,26 +50,26 @@ void Overlay::updateTeams(QString home_name, QString away_name, QString home_col
     scbdData=svg.updateAttr(scbdData,homeColor,"style",home_color);
     scbdData=svg.updateAttr(scbdData,awayColor,"style",away_color);
 
-    QSvgRenderer otherrender(scbdData);
-    QPixmap othergraphic(otherrender.defaultSize());
-    othergraphic.fill(Qt::transparent);
-    QPainter pixPainter(&othergraphic);
-    otherrender.render(&pixPainter);
-    ui->Scoreboard->setPixmap(othergraphic);
+    paintScoreboard(scbdData);
+}
+
+void Overlay::updateScore(int home_score, int away_score){
+    scbdData=svg.updateVal(scbdData,homeScore,QString::number(home_score));
+    scbdData=svg.updateVal(scbdData,awayScore,QString::number(away_score));
+    paintScoreboard(scbdData);
+}
+
+void Overlay::updateShots(int home_shots, int away_shots){
+    scbdData=svg.updateVal(scbdData,homeShots,QString::number(home_shots));
+    scbdData=svg.updateVal(scbdData,awayShots,QString::number(away_shots));
+    paintScoreboard(scbdData);
 }
 
 void Overlay::loadScoreboard(QString filepath){
     QFile scoreboard(filepath);
     scoreboard.open(QIODevice::ReadOnly);
     scbdData = scoreboard.readAll();
-    QSvgRenderer svgRenderer(scbdData);
-    QPixmap graphic(svgRenderer.defaultSize());
-    graphic.fill(Qt::transparent);
-    // create painter to act over pixmap
-    QPainter pixPainter(&graphic);
-    // use renderer to render over painter which paints on pixmap
-    svgRenderer.render(&pixPainter);
-    ui->Scoreboard->setPixmap(graphic);
+    paintScoreboard(scbdData);
 }
 
 void Overlay::ScoreboardShow(bool tf)
@@ -97,4 +89,13 @@ void Overlay::ScoreboardShow(bool tf)
         a->start(QPropertyAnimation::DeleteWhenStopped);
     }
     ui->Scoreboard->setGraphicsEffect(eff);
+}
+
+void Overlay::paintScoreboard(QByteArray scbdbytes){
+    QSvgRenderer renderer(scbdbytes);
+    QPixmap graphic(renderer.defaultSize());
+    graphic.fill(Qt::transparent);
+    QPainter pixPainter(&graphic);
+    renderer.render(&pixPainter);
+    ui->Scoreboard->setPixmap(graphic);
 }

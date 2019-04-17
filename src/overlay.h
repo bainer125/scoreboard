@@ -18,10 +18,13 @@ public:
     void loadScoreboard(QString filename);
     void updateClock(QString clock_text);
     void updateTeams(QString home_name, QString home_color, QString away_name, QString away_color);
+    void updateScore(int home_score, int away_score);
+    void updatePenalties(int hp1, int hp2, int ap1, int ap2);
+    void updateShots(int home_shots, int away_shots);
+    void paintScoreboard(QByteArray scbdbytes);
 
 
 public slots:
-    void UpdateScoreboard(QString text);
     void ScoreboardShow(bool);
 
 private:
