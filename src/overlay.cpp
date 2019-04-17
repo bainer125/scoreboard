@@ -4,8 +4,17 @@
 #include <QGraphicsDropShadowEffect>
 #include <QGraphicsEffect>
 #include <QPropertyAnimation>
-#include <QFile>
 #include <QSvgRenderer>
+#include <QPixmap>
+#include <QtSvg>
+#include <QFile>
+#include <QPainter>
+#include <QDomDocument>
+#include <QDomElement>
+#include <QDomNodeList>
+#include <QDomNode>
+#include <QDomText>
+#include <QDomAttr>
 
 using namespace std;
 
@@ -13,6 +22,8 @@ static updatesvg svg;
 
 static QFile intermission;
 static QByteArray scbdData;
+static QString clockText = "clockText", homeName = "homeName", awayName = "awayName", homeScore, awayScore;
+static QString homeColor = "homeColor", awayColor = "awayColor";
 
 Overlay::Overlay(QWidget *parent) :
     QDialog(parent),
@@ -31,10 +42,27 @@ void Overlay::UpdateScoreboard(QString text)
 {
 }
 
-void Overlay::updateClock(QString clockText){
-    scbdData=svg.updateVal(scbdData,"clockText",clockText);
+void Overlay::updateClock(QString clock_text){
+    scbdData=svg.updateVal(scbdData,clockText,clock_text);
     QSvgRenderer otherrender(scbdData);
     QPixmap othergraphic(otherrender.defaultSize());
+    othergraphic.fill(Qt::transparent);
+    QPainter pixPainter(&othergraphic);
+    otherrender.render(&pixPainter);
+    ui->Scoreboard->setPixmap(othergraphic);
+}
+
+void Overlay::updateTeams(QString home_name, QString away_name, QString home_color, QString away_color){
+    scbdData=svg.updateVal(scbdData,homeName,home_name);
+    scbdData=svg.updateVal(scbdData,awayName,away_name);
+    scbdData=svg.updateAttr(scbdData,homeColor,"style",home_color);
+    scbdData=svg.updateAttr(scbdData,awayColor,"style",away_color);
+
+    QSvgRenderer otherrender(scbdData);
+    QPixmap othergraphic(otherrender.defaultSize());
+    othergraphic.fill(Qt::transparent);
+    QPainter pixPainter(&othergraphic);
+    otherrender.render(&pixPainter);
     ui->Scoreboard->setPixmap(othergraphic);
 }
 
@@ -44,7 +72,11 @@ void Overlay::loadScoreboard(QString filepath){
     scbdData = scoreboard.readAll();
     QSvgRenderer svgRenderer(scbdData);
     QPixmap graphic(svgRenderer.defaultSize());
-    ui->Scoreboard->setFixedSize(400,200);
+    graphic.fill(Qt::transparent);
+    // create painter to act over pixmap
+    QPainter pixPainter(&graphic);
+    // use renderer to render over painter which paints on pixmap
+    svgRenderer.render(&pixPainter);
     ui->Scoreboard->setPixmap(graphic);
 }
 

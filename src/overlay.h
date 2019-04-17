@@ -16,7 +16,10 @@ public:
     explicit Overlay(QWidget *parent = 0);
     ~Overlay();
     void loadScoreboard(QString filename);
-    void updateClock(QString clockText);
+    void updateClock(QString clock_text);
+    void updateTeams(QString home_name, QString home_color, QString away_name, QString away_color);
+
+
 public slots:
     void UpdateScoreboard(QString text);
     void ScoreboardShow(bool);
