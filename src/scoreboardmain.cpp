@@ -56,6 +56,7 @@ static string Home_Name = "", Away_Name = ""; //Name for Home, Away
 static string clock_symbol = ":"; //Clock Symbol | Default = : | Milliseconds = .
 static string Window_Name = "Scoreboard Control Panel"; //Please Change this after a update!
 static QString clock_text = "00:00";   //the clock text
+static QString last_clock_text = "00:00";
 
 ScoreboardMain::ScoreboardMain(QWidget *parent) :
     QMainWindow(parent),
@@ -200,6 +201,7 @@ void ScoreboardMain::Changed() //Changed Score,etc
         writexml();
     }
     ol->updateScore(Home_Score, Away_Score);
+    ol->updatePeriod(Period);
     ui->HomeScore_Label->setText(QString::number(Home_Score));
     ui->AwayScore_Label->setText(QString::number(Away_Score));
     ui->Period_Label->setText(QString::number(Period));
@@ -396,234 +398,15 @@ void ScoreboardMain::on_Alway_on_top_Checkbox_clicked(bool alwayson) //Always on
 void ScoreboardMain::on_Update_Pens_clicked()
 {
     ScoreboardMain::Update_Penalties();
+    ol->updatePenalties(hp1,hp2,ap1,ap2,hp1m,hp1s,hp2m,hp2s,ap1m,ap1s,ap2m,ap2s);
 }
 
 void ScoreboardMain::Update_Penalties()
 {
-    int firstm = 0, firsts = 0, next1 = 60, next2 = 60, next3 = 60, next4 = 60;
     hp1 = ui->HP1->isChecked();
     hp2 = ui->HP2->isChecked();
     ap1 = ui->AP1->isChecked();
     ap2 = ui->AP2->isChecked();
-
-    //Even strength
-    if(hp1==1&&hp2==1&&ap1==1&&ap2==1){
-        firstm = min(hp1m,min(hp2m,min(ap1m,ap2m)));
-        if(hp1m==firstm){
-            next1=hp1s;
-        }
-        if(hp2m==firstm){
-            next2=hp2s;
-        }
-        if(ap1m==firstm){
-            next3=ap1s;
-        }
-        if(ap2m==firstm){
-            next4=ap2s;
-        }
-        firsts = min(next1,min(next2,min(next3,next4)));
-        if (firsts<10){
-        }
-        else{
-        }
-        ScoreboardMain::Clear_Penalties("e");
-    }
-    else if((hp1+hp2)==1&&(ap1+ap2)==1){
-        if(hp1){
-            if(ap1){
-                firstm = min(hp1m,ap1m);
-                if(hp1m==firstm){
-                    next1=hp1s;
-                }
-                if(ap1m==firstm){
-                    next2=ap1s;
-                }
-            }
-            else{
-                firstm = min(hp1m,ap2m);
-                if(hp1m==firstm){
-                    next1=hp1s;
-                }
-                if(ap2m==firstm){
-                    next2=ap2s;
-                }
-
-            }
-        }
-        else{
-            if(ap1){
-                firstm = min(hp2m,ap1m);
-                if(hp2m==firstm){
-                    next1=hp2s;
-                }
-                if(ap1m==firstm){
-                    next2=ap1s;
-                }
-            }
-            else{
-                firstm = min(hp2m,ap2m);
-                if(hp2m==firstm){
-                    next1=hp2s;
-                }
-                if(ap2m==firstm){
-                    next2=ap2s;
-                }
-
-            }
-        }
-        firsts = min(next1,next2);
-        if (firsts<10){
-        }
-        else{
-        }
-        ScoreboardMain::Clear_Penalties("e");
-    }
-
-    //5 on 3 PPs
-    else if(hp1==1&&hp2==1&&ap1==0&&ap2==0){
-        firstm = min(hp1m,hp2m);
-        if(hp1m==firstm){
-            next1=hp1s;
-        }
-        if(hp2m==firstm){
-            next2=hp2s;
-        }
-        firsts=min(next1,next2);
-        if (firsts<10){
-        }
-        else{
-        }
-        ScoreboardMain::Clear_Penalties("a");
-    }
-    else if(hp1==0&&hp2==0&&ap1==1&&ap2==1){
-        firstm = min(ap1m,ap2m);
-        if(ap1m==firstm){
-            next1=ap1s;
-        }
-        if(ap2m==firstm){
-            next2=ap2s;
-        }
-        firsts=min(next1,next2);
-        if (firsts<10){
-        }
-        else{
-        }
-        ScoreboardMain::Clear_Penalties("h");
-    }
-
-    //4 on 3 PPs
-    else if(hp1==1&&hp2==1&&(ap1+ap2)==1){
-        if(ap1){
-            firstm=min(ap1m,min(hp1m,hp2m));
-            if(hp1m==firstm){
-                next1=hp1s;
-            }
-            if(hp2m==firstm){
-                next2=hp2s;
-            }
-            if(ap1m==firstm){
-                next3=ap1s;
-            }
-        }
-        else{
-            firstm=min(ap2m,min(hp1m,hp2m));
-            if(hp1m==firstm){
-                next1=hp1s;
-            }
-            if(hp2m==firstm){
-                next2=hp2s;
-            }
-            if(ap2m==firstm){
-                next3=ap2s;
-            }
-        }
-        firsts = min(next1,min(next2,next3));
-        if (firsts<10){
-        }
-        else{
-        }
-        ScoreboardMain::Clear_Penalties("a");
-    }
-    else if((hp1+hp2)==1&&ap1==1&&ap2==1){
-        if(hp1){
-            firstm=min(hp1m,min(ap1m,ap2m));
-            if(hp1m==firstm){
-                next1=hp1s;
-            }
-            if(ap1m==firstm){
-                next2=ap1s;
-            }
-            if(ap2m==firstm){
-                next3=ap2s;
-            }
-        }
-        else{
-            firstm=min(hp2m,min(ap1m,ap2m));
-            if(hp2m==firstm){
-                next1=hp2s;
-            }
-            if(ap1m==firstm){
-                next2=ap1s;
-            }
-            if(ap2m==firstm){
-                next3=ap2s;
-            }
-        }
-        firsts = min(next1,min(next2,next3));
-        if (firsts<10){
-        }
-        else{
-        }
-        ScoreboardMain::Clear_Penalties("h");
-    }
-
-    //5 on 4 PPs
-    else if(hp1==1&&hp2==0&&ap1==0&&ap2==0){
-        if (hp1s<10){
-        }
-        else{
-        }
-        ScoreboardMain::Clear_Penalties("a");
-    }
-    else if(hp1==0&&hp2==1&&ap1==0&&ap2==0){
-        if (hp2s<10){
-        }
-        else{
-        }
-        ScoreboardMain::Clear_Penalties("a");
-    }
-    else if(hp1==0&&hp2==0&&ap1==1&&ap2==0){
-        if (ap1s<10){
-        }
-        else{
-        }
-        ScoreboardMain::Clear_Penalties("h");
-    }
-    else if(hp1==0&&hp2==0&&ap1==0&&ap2==1){
-        if (ap2s<10){
-        }
-        else{
-        }
-        ScoreboardMain::Clear_Penalties("h");
-    }
-
-    //No Penalties
-    else{
-        ScoreboardMain::Clear_Penalties("");
-
-    }
-}
-
-void ScoreboardMain::Clear_Penalties(QString shown)
-{
-    if(shown=="h"){
-    }
-    else if(shown=="a"){
-    }
-    else if(shown=="e"){
-    }
-    else{
-    }
 }
 
 void ScoreboardMain::on_HP1_clicked()
@@ -821,6 +604,7 @@ void ScoreboardMain::updateClock()
 
 void ScoreboardMain::updateClockView()
 {
+    last_clock_text = clock_text;
     if(minu<1){
         if(mseco==10){
             clock_text = QString::number(seco) + ".0";
@@ -868,7 +652,7 @@ void ScoreboardMain::on_End_Game_Button_clicked()
     else{
         Period=10;
     }
-    ScoreboardMain::Clear_Penalties("");
+    ol->updatePenalties(0,0,0,0,hp1m,hp1s,hp2m,hp2s,ap1m,ap1s,ap2m,ap2s);
     Period=lastPeriod;
 }
 
@@ -1089,6 +873,7 @@ void ScoreboardMain::Timer() //Timer
      if(secflag){
          ScoreboardMain::Penalty_Timer();
          ScoreboardMain::Update_Penalties();
+         ol->updatePenalties(hp1,hp2,ap1,ap2,hp1m,hp1s,hp2m,hp2s,ap1m,ap1s,ap2m,ap2s);
      }
      if(ui->checkBox->isChecked())
      {

@@ -33,7 +33,7 @@ public:
         Overlay->setModal(false);
         Scoreboard = new QLabel(Overlay);
         Scoreboard->setObjectName(QString::fromUtf8("Scoreboard"));
-        Scoreboard->setGeometry(QRect(50, 10, 741, 221));
+        Scoreboard->setGeometry(QRect(50, 10, 1461, 221));
         Scoreboard->setStyleSheet(QString::fromUtf8(""));
 
         retranslateUi(Overlay);

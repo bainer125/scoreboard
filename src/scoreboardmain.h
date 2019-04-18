@@ -38,8 +38,6 @@ private slots:
     
     void closeEvent (QCloseEvent *);
     
-    void Clear_Penalties(QString shown);
-    
     void on_Update_Pens_clicked();
     
     void Update_Penalties();
