@@ -42,6 +42,7 @@ void updatesvg::findElementAttr( QDomElement& elem, QString id, QString attr, QS
     QDomElement fourth;
     QDomElement fifth;
     QDomElement sixth;
+    QDomElement sev;
 
     if(elem.hasChildNodes()){
         for (int i = 0; i<elem.childNodes().count();i++){
@@ -96,6 +97,17 @@ void updatesvg::findElementAttr( QDomElement& elem, QString id, QString attr, QS
                                                     if(sixth.attribute("id")==id){
                                                         sixth.setAttribute(attr,val);
                                                         return;
+                                                    }
+                                                    if(sixth.hasChildNodes()){
+                                                        for (int i = 0; i<sixth.childNodes().count();i++){
+                                                            if(sixth.childNodes().at(i).isElement()){
+                                                                sev = sixth.childNodes().at(i).toElement();
+                                                            }
+                                                            if(sev.attribute("id")==id){
+                                                                sev.setAttribute(attr,val);
+                                                                return;
+                                                            }
+                                                        }
                                                     }
                                                 }
                                             }

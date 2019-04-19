@@ -71,7 +71,15 @@ private slots:
     void on_Second10down_clicked();
     
     void on_Second1up_clicked();
-    
+
+    void on_Addzero_Checkbox_clicked(bool add);
+
+    void on_Milliseconds_Checkbox_clicked(bool mill);
+
+    void on_Speed_CheckBox_clicked(bool checked11);
+
+    void on_Speed_Input_valueChanged(int arg13);
+
     void on_Second1down_clicked();
     
     void on_MS10up_clicked();

@@ -334,7 +334,7 @@ void ScoreboardMain::on_Update_Team_Button_clicked() //Update Team Name Button
     QString awayback = "background: url(./Teams/";
     awayback.append(ui->Away_Option->currentText());
     awayback.append("/itmsn_away.png)");
-    ol->updateTeams(HomeN,AwayN,QString::fromStdString("fill:"+home_color),QString::fromStdString("fill:"+away_color));
+    ol->updateTeams(HomeN,AwayN,QString::fromStdString(home_color),QString::fromStdString(away_color));
 }
 
 void ScoreboardMain::on_Reset_Score_Button_clicked() //Reset Score Button
@@ -1604,7 +1604,7 @@ void ScoreboardMain::closeEvent(QCloseEvent *)
 
 void ScoreboardMain::on_comboTheme_currentTextChanged(const QString &arg1)
 {
-    ol->loadScoreboard("./Graphics/Themes/"+ui->comboTheme->currentText()+"/scbd.svg");
+    ol->loadScoreboard("./Graphics/Themes/"+ui->comboTheme->currentText()+"/scbd");
     on_Update_Team_Button_clicked();
     Changed();
     on_Update_Pens_clicked();

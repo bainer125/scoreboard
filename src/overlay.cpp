@@ -15,6 +15,7 @@
 #include <QDomNode>
 #include <QDomText>
 #include <QDomAttr>
+#include <QMessageBox>
 
 using namespace std;
 
@@ -26,7 +27,7 @@ static QSvgRenderer renderer;
 
 // Values used to determine ID tags in svg themes
 
-static QVector<QVector<QString>> homeAttr(8), awayAttr(8), scbdGroups(5);
+static QVector<QVector<QVector<QString>>> homeAttr(8), awayAttr(8), scbdGroups(5);
 static QVector<QString> teamAttr = {"color1","color2","color3","color4","logo1","logo2","logo3","logo4"};
 static QVector<QString> teamVals = {"fullName","name","abbr","mascot"};
 static QVector<QString> gameValueTags = {"clockText","periodText","homeScore","awayScore","homeShots", \
@@ -66,14 +67,22 @@ void Overlay::updateTeams(QString home_name, QString away_name, QString home_col
     /* Covers all graphic portions to be updated on a team change
      * Anything that is set in the theme config file will be changed here
      */
+    for(int i=0;i<homeAttr.size();i++){
+        for(int j=0;j<homeAttr[i].size();j++){
+            if(teamAttr[i]=="color1"){
+                scbdData=svg.updateAttr(scbdData,homeAttr[i][j][0],homeAttr[i][j][1],homeAttr[i][j][2]+home_color+homeAttr[i][j][3]);
+            }
+        }
+    }
+    for(int i=0;i<awayAttr.size();i++){
+        for(int j=0;j<awayAttr[i].size();j++){
+            if(teamAttr[i]=="color1"){
+                scbdData=svg.updateAttr(scbdData,awayAttr[i][j][0],awayAttr[i][j][1],awayAttr[i][j][2]+away_color+awayAttr[i][j][3]);
+            }
+        }
+    }
     scbdData=svg.updateVal(scbdData,homeName,home_name);
     scbdData=svg.updateVal(scbdData,awayName,away_name);
-    scbdData=svg.updateAttr(scbdData,homeColor,"style",home_color);
-    scbdData=svg.updateAttr(scbdData,awayColor,"style",away_color);
-    scbdData=svg.updateAttr(scbdData,"homePenaltyColor","style",away_color+";fill-opacity:0.78431373");
-    scbdData=svg.updateAttr(scbdData,"awayPenaltyColor","style",home_color+";fill-opacity:0.78431373");
-    scbdData=svg.updateAttr(scbdData,"homeShotsColor","style",home_color);
-    scbdData=svg.updateAttr(scbdData,"awayShotsColor","style",away_color);
 
     paintScoreboard(scbdData);
 }
@@ -395,6 +404,8 @@ void Overlay::clearPenalties(QString shown)
 void Overlay::loadScoreboard(QString filepath){
     QFile scoreboard(filepath+".svg");
     scoreboard.open(QIODevice::ReadOnly);
+    scbdData = scoreboard.readAll();
+    paintScoreboard(scbdData);
     QFile config(filepath+".txt");
     if (config.open(QIODevice::ReadOnly))
     {
@@ -408,13 +419,17 @@ void Overlay::loadScoreboard(QString filepath){
         config.close();
         parsescbdConfig(file);
     }
-    scbdData = scoreboard.readAll();
-    paintScoreboard(scbdData);
 }
 
 void Overlay::parsescbdConfig(QVector<QString> config){
     int flag = -1;
     QString tag;
+    QString attributes, id, attr, before, after;
+    QString next, last;
+    QStringList objects;
+    QVector<QString> attrlist;
+
+
     for(int i=0;i<config.size();i++){
         QString line = config[i].trimmed();
         if(line.begin()==QString::fromStdString("#")||line.begin()==line.end()){
@@ -444,19 +459,127 @@ void Overlay::parsescbdConfig(QVector<QString> config){
                 flag = 5;
                 continue;
             }
-            else{
-                tag=line.split("=")[0];
-                if(flag==0){
-                }
-                else if(flag==1){
-                }
-                else if(flag==2){
-                }
-                else if(flag==3){
-                }
-                else if(flag==4){
-                }
-                else if(flag==5){
+            else if(line!=""){
+                if(line.contains("=")){
+                    tag=line.split("=")[0];
+                    attributes=line.split("=")[1];                
+                    if(flag==0){
+                        for(int j=0;j<teamAttr.size();j++){
+                            if(tag==teamAttr[j]){
+                                if(attributes.contains("&&")){
+                                    objects=attributes.split("&&");
+                                    for(int k=0;k<objects.size();k++){
+                                        id = objects[k].split("{")[0];
+                                        next = objects[k].split("{")[1];
+                                        attr = next.split("(")[0];
+                                        last = next.split("(")[1];
+                                        last.chop(2);
+                                        before = last.split("><")[0];
+                                        after = last.split("><")[1];
+                                        homeAttr[j].append({id,attr,before,after});
+                                    }
+                                    break;
+                                }
+                                else{
+                                    id = attributes.split("{")[0];
+                                    next = attributes.split("{")[1];
+                                    attr = next.split("(")[0];
+                                    last = next.split("(")[1];
+                                    last.chop(2);
+                                    before = last.split("><")[0];
+                                    after = last.split("><")[1];
+                                    homeAttr[j].append({id,attr,before,after});
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    else if(flag==1){
+                        for(int j=0;j<teamVals.size();j++){
+                            if(tag==teamVals[j]){
+                                homeVals.insert(j,line.split("=")[1]);
+                                break;
+                            }
+                        }
+                    }
+                    else if(flag==2){
+                        for(int j=0;j<teamAttr.size();j++){
+                            if(tag==teamAttr[j]){
+                                if(attributes.contains("&&")){
+                                    objects=attributes.split("&&");
+                                    for(int k=0;k<objects.size();k++){
+                                        id = objects[k].split("{")[0];
+                                        next = objects[k].split("{")[1];
+                                        attr = next.split("(")[0];
+                                        last = next.split("(")[1];
+                                        last.chop(2);
+                                        before = last.split("><")[0];
+                                        after = last.split("><")[1];
+                                        awayAttr[j].append({id,attr,before,after});
+                                    }
+                                    break;
+                                }
+                                else{
+                                    id = attributes.split("{")[0];
+                                    next = attributes.split("{")[1];
+                                    attr = next.split("(")[0];
+                                    last = next.split("(")[1];
+                                    last.chop(2);
+                                    before = last.split("><")[0];
+                                    after = last.split("><")[1];
+                                    awayAttr[j].append({id,attr,before,after});
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    else if(flag==3){
+                        for(int j=0;j<teamVals.size();j++){
+                            if(tag==teamVals[j]){
+                                awayVals.insert(j,line.split("=")[1]);
+                                break;
+                            }
+                        }
+                    }
+                    else if(flag==4){
+                        for(int j=0;j<gameValueTags.size();j++){
+                            if(tag==gameValueTags[j]){
+                                gameVals.insert(j,line.split("=")[1]);
+                                break;
+                            }
+                        }
+                    }
+                    else if(flag==5){
+                        for(int j=0;j<groupTags.size();j++){
+                            if(tag==groupTags[j]){
+                                if(attributes.contains("&&")){
+                                    objects=attributes.split("&&");
+                                    for(int k=0;k<objects.size();k++){
+                                        id = objects[k].split("{")[0];
+                                        next = objects[k].split("{")[1];
+                                        attr = next.split("(")[0];
+                                        last = next.split("(")[1];
+                                        last.chop(2);
+                                        before = last.split("><")[0];
+                                        after = last.split("><")[1];
+                                        scbdGroups[j].append({id,attr,before,after});
+                                    }
+                                    break;
+                                }
+                                else{
+                                    id = attributes.split("{")[0];
+                                    next = attributes.split("{")[1];
+                                    attr = next.split("(")[0];
+                                    last = next.split("(")[1];
+                                    last.chop(2);
+                                    before = last.split("><")[0];
+                                    after = last.split("><")[1];
+                                    scbdGroups[j].append({id,attr,before,after});
+                                    break;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
