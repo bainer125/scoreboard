@@ -130,15 +130,11 @@ private slots:
 
     void on_Seconds_To_Input_valueChanged(int arg3);
 
-    void on_Addzero_Checkbox_clicked(bool add);
-
     void on_CurrentTime_Checkbox_clicked(bool current);
 
     void timeclock();
 
     void on_Stopwatch_Checkbox_clicked(bool stop);
-
-    void on_Milliseconds_Checkbox_clicked(bool milli);
 
     void on_Countdown_Checkbox_clicked(bool countdown);
 
@@ -166,11 +162,7 @@ private slots:
 
     void on_TestSound_Button_clicked();
 
-    void on_Speed_CheckBox_clicked(bool checked11);
-
     void on_SpeedHelp_Button_clicked();
-
-    void on_Speed_Input_valueChanged(int arg13);
 
     void ifclockinputchanged();
 
@@ -197,6 +189,8 @@ private slots:
     void on_SoundSpeed_Slider_sliderMoved(int slidepos);
 
     void putduration();
+
+    void on_comboTheme_currentTextChanged(const QString &arg1);
 
 protected:
 private:

@@ -1,6 +1,7 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2015-09-30T17:18:11
+# Liam McBain
+# Free Graphic Overlay and Playout System
 #
 #-------------------------------------------------
 

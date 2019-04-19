@@ -1,0 +1,9 @@
+ fullName=Rensselaer Polytechnic Institute
+ name=Rensselaer
+ abbr=RPI
+ mascot=Engineers
+ color1=#d6001c
+ color2=#fffff
+ color3=#000000
+ color4=#9ea2a2
+ 

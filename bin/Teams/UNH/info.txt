@@ -1,0 +1,8 @@
+ fullName=University of New Hampshire
+ name=New Hampshire
+ abbr=UNH
+ mascot=Wildcats
+ color1=#041e42
+ color2=#BBBCBC
+ color3=#ffffff
+ 

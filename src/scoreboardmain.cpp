@@ -45,7 +45,7 @@ static bool input_stop = false; //Stop getting the number from the input
 static bool getinput = false;
 static bool testplayer = false; //Test player button
 static bool to_switch; //On/Off for To_input
-static bool Milliseconds = true, Minute_Zero = false, Hotkey = false, Stopwatch_input = false; //On/Off for Milliseconds, Add zero to minute, Hotkey, Stopwatch
+static bool Milliseconds = true, Minute_Zero = false, Stopwatch_input = false; //On/Off for Milliseconds, Add zero to minute, Hotkey, Stopwatch
 static bool presetbool = true; //Preset timer
 static bool SecretIanButton = false; //Secret Ian Button
 
@@ -82,39 +82,27 @@ void ScoreboardMain::Opened() //Resets all
 {
     writexml();
 
-    ol->loadScoreboard("./Graphics/dscbd.svg");
+    ol->loadScoreboard("./Graphics/Themes/Default-Corner/scbd");
 
     QDir directory("./Teams");
 
     QStringList teams = directory.entryList(QDir::Dirs);
-
+    teams.removeAt(0);
+    teams.removeAt(0);
 
     ui->Home_Option->addItems(teams);
     ui->Away_Option->addItems(teams);
 
-    QFont font0 = ui->PeriodUP_Button->font();
-    font0.setPointSize(20);
-    ui->PeriodUP_Button->setFont(font0);
+    QDir dirThemes("./Graphics/Themes");
+    QStringList themes = dirThemes.entryList(QDir::Dirs);
+    themes.removeAt(0);
+    themes.removeAt(0);
 
-    QFont font1 = ui->PeriodDOWN_Button->font();
-    font1.setPointSize(20);
-    ui->PeriodDOWN_Button->setFont(font1);
-
-    QFont font2 = ui->HomeUP_Button->font();
-    font2.setPointSize(20);
-    ui->HomeUP_Button->setFont(font2);
-
-    QFont font3 = ui->HomeDOWN_Button->font();
-    font3.setPointSize(20);
-    ui->HomeDOWN_Button->setFont(font3);
-
-    QFont font4 = ui->AwayUP_Button->font();
-    font4.setPointSize(20);
-    ui->AwayUP_Button->setFont(font4);
-
-    QFont font5 = ui->AwayDOWN_Button->font();
-    font5.setPointSize(20);
-    ui->AwayDOWN_Button->setFont(font5);
+    ui->comboTheme->addItems(themes);
+    on_Update_Team_Button_clicked();
+    Changed();
+    on_Update_Pens_clicked();
+    on_Update_Timer_clicked();
 
     ui->TimerPreset_Checkbox->setChecked(true);
     this->setFixedSize(this->size());
@@ -1612,4 +1600,14 @@ void ScoreboardMain::on_SoundSpeed_Slider_sliderMoved(int slidepos)
 void ScoreboardMain::closeEvent(QCloseEvent *)
 {
     ol->close();
+}
+
+void ScoreboardMain::on_comboTheme_currentTextChanged(const QString &arg1)
+{
+    ol->loadScoreboard("./Graphics/Themes/"+ui->comboTheme->currentText()+"/scbd.svg");
+    on_Update_Team_Button_clicked();
+    Changed();
+    on_Update_Pens_clicked();
+    on_Update_Timer_clicked();
+
 }

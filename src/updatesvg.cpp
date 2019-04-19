@@ -32,8 +32,8 @@ QByteArray updatesvg::updateVal(QByteArray pic, QString id, QString val){
 
 void updatesvg::findElementAttr( QDomElement& elem, QString id, QString attr, QString val){
 
-    //We go through five layers of children looking for chosen ID
-    //Ideally we would just search recursively, but the function written
+    //We go through six layers of children looking for chosen ID
+    //Ideally we would just search recursively, but the function I'd written
     //previously wasn't working. I'll get to it eventually lol
 
     QDomElement first;
@@ -113,8 +113,8 @@ void updatesvg::findElementAttr( QDomElement& elem, QString id, QString attr, QS
 
 void updatesvg::findElementVal( QDomElement& elem, QString id, QString val){
 
-    //We go through five layers of children looking for chosen ID
-    //Ideally we would just search recursively, but the function written
+    //We go through fourth layers of children looking for chosen ID
+    //Ideally we would just search recursively, but the function I'd written
     //previously wasn't working. I'll get to it eventually lol
 
     QDomElement first;

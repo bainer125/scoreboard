@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QString>
+#include <QFile>
 
 namespace Ui {
     class Overlay;
@@ -24,6 +25,8 @@ public:
     void clearPenalties(QString shown);
     void updateShots(int home_shots, int away_shots);
     void paintScoreboard(QByteArray scbdbytes);
+
+    void parsescbdConfig(QVector<QString> config);
 
 
 public slots:

@@ -171,6 +171,11 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
       </property>
@@ -186,6 +191,11 @@
         <width>71</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
       </property>
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
@@ -223,6 +233,11 @@
         <width>71</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
       </property>
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
@@ -368,6 +383,11 @@
         <width>71</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
       </property>
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
@@ -682,6 +702,11 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
       </property>
@@ -697,6 +722,11 @@
         <width>41</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
       </property>
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
@@ -714,6 +744,11 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
       </property>
@@ -729,6 +764,11 @@
         <width>41</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
       </property>
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
@@ -746,6 +786,11 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
       </property>
@@ -761,6 +806,11 @@
         <width>41</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
       </property>
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
@@ -778,6 +828,11 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
       </property>
@@ -793,6 +848,11 @@
         <width>41</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
       </property>
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
@@ -810,6 +870,11 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
       </property>
@@ -825,6 +890,11 @@
         <width>41</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
       </property>
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
@@ -1383,6 +1453,16 @@ All</string>
       </property>
       <property name="text">
        <string>CheckBox</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboTheme">
+      <property name="geometry">
+       <rect>
+        <x>428</x>
+        <y>630</y>
+        <width>121</width>
+        <height>26</height>
+       </rect>
       </property>
      </widget>
     </widget>
@@ -2048,7 +2128,7 @@ All</string>
      <x>0</x>
      <y>0</y>
      <width>581</width>
-     <height>29</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuAbout">

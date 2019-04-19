@@ -22,7 +22,23 @@ static updatesvg svg;
 
 static QFile intermission;
 static QByteArray scbdData;
-static QString periodText = "periodText", clockText = "clockText", homeName = "homeName", awayName = "awayName", homeScore = "homeScore", awayScore = "awayScore";
+static QSvgRenderer renderer;
+
+// Values used to determine ID tags in svg themes
+
+static QVector<QVector<QString>> homeAttr(8), awayAttr(8), scbdGroups(5);
+static QVector<QString> teamAttr = {"color1","color2","color3","color4","logo1","logo2","logo3","logo4"};
+static QVector<QString> teamVals = {"fullName","name","abbr","mascot"};
+static QVector<QString> gameValueTags = {"clockText","periodText","homeScore","awayScore","homeShots", \
+                                         "awayShots","homeHits","awayHits","homePenaltyText","homePenaltyClock", \
+                                         "awayPenaltyText","awayPenaltyClock","evenPenaltyText","evenPenaltyClock"};
+static QVector<QString> groupTags = {"homePenalty","awayPenalty","evenPenalty","shotsView","hitsView"};
+static QVector<QString> homeVals(4), awayVals(4), gameVals(14);
+
+
+
+static QString periodText = "periodText", clockText = "clockText", homeName = "homeName", \
+        awayName = "awayName", homeScore = "homeScore", awayScore = "awayScore";
 static QString homeShots = "homeShots", awayShots = "awayShots";
 static QString homeColor = "homeColor", awayColor = "awayColor";
 
@@ -40,17 +56,24 @@ Overlay::~Overlay()
 }
 
 void Overlay::updateClock(QString clock_text){
+    /* Updates the clock value and redraws
+     */
     scbdData=svg.updateVal(scbdData,clockText,clock_text);
     paintScoreboard(scbdData);
 }
 
 void Overlay::updateTeams(QString home_name, QString away_name, QString home_color, QString away_color){
+    /* Covers all graphic portions to be updated on a team change
+     * Anything that is set in the theme config file will be changed here
+     */
     scbdData=svg.updateVal(scbdData,homeName,home_name);
     scbdData=svg.updateVal(scbdData,awayName,away_name);
     scbdData=svg.updateAttr(scbdData,homeColor,"style",home_color);
     scbdData=svg.updateAttr(scbdData,awayColor,"style",away_color);
     scbdData=svg.updateAttr(scbdData,"homePenaltyColor","style",away_color+";fill-opacity:0.78431373");
     scbdData=svg.updateAttr(scbdData,"awayPenaltyColor","style",home_color+";fill-opacity:0.78431373");
+    scbdData=svg.updateAttr(scbdData,"homeShotsColor","style",home_color);
+    scbdData=svg.updateAttr(scbdData,"awayShotsColor","style",away_color);
 
     paintScoreboard(scbdData);
 }
@@ -370,10 +393,74 @@ void Overlay::clearPenalties(QString shown)
 }
 
 void Overlay::loadScoreboard(QString filepath){
-    QFile scoreboard(filepath);
+    QFile scoreboard(filepath+".svg");
     scoreboard.open(QIODevice::ReadOnly);
+    QFile config(filepath+".txt");
+    if (config.open(QIODevice::ReadOnly))
+    {
+        QVector<QString> file;
+        QTextStream in(&config);
+        while (!in.atEnd())
+        {
+            QString line = in.readLine();
+            file.append(line);
+        }
+        config.close();
+        parsescbdConfig(file);
+    }
     scbdData = scoreboard.readAll();
     paintScoreboard(scbdData);
+}
+
+void Overlay::parsescbdConfig(QVector<QString> config){
+    int flag = -1;
+    QString tag;
+    for(int i=0;i<config.size();i++){
+        QString line = config[i].trimmed();
+        if(line.begin()==QString::fromStdString("#")||line.begin()==line.end()){
+            continue;
+        }
+        else{
+            if(line=="HomeTeamAttr"){
+                flag = 0;
+            }
+            else if(line=="HomeTeamVals"){
+                flag = 1;
+                continue;
+            }
+            else if(line=="AwayTeamAttr"){
+                flag = 2;
+                continue;
+            }
+            else if(line=="AwayTeamVals"){
+                flag = 3;
+                continue;
+            }
+            else if(line=="GameValues"){
+                flag = 4;
+                continue;
+            }
+            else if(line=="Groups"){
+                flag = 5;
+                continue;
+            }
+            else{
+                tag=line.split("=")[0];
+                if(flag==0){
+                }
+                else if(flag==1){
+                }
+                else if(flag==2){
+                }
+                else if(flag==3){
+                }
+                else if(flag==4){
+                }
+                else if(flag==5){
+                }
+            }
+        }
+    }
 }
 
 void Overlay::ScoreboardShow(bool tf)
@@ -396,7 +483,7 @@ void Overlay::ScoreboardShow(bool tf)
 }
 
 void Overlay::paintScoreboard(QByteArray scbdbytes){
-    QSvgRenderer renderer(scbdbytes);
+    renderer.load(scbdbytes);
     QPixmap graphic(renderer.defaultSize());
     graphic.fill(Qt::transparent);
     QPainter pixPainter(&graphic);
