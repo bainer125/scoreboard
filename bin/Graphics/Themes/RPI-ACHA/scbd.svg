@@ -235,7 +235,23 @@
        inkscape:connector-curvature="0"
        id="path2614"
        d="m 1120.6,44 h -90.6 -30.59998 -158.8 c 6,10.3 9.4,22.2 9.4,35 0,12.8 -3.4,24.7 -9.4,35 h 158.8 30.59998 90.6 c 6,-10.3 9.4,-22.2 9.4,-35 0,-12.8 -3.4,-24.7 -9.4,-35 z"
-       class="st13" /></clipPath></defs><sodipodi:namedview
+       class="st13" /></clipPath><clipPath
+     clipPathUnits="userSpaceOnUse"
+     id="clipPath1174"><path
+       class="st15"
+       d="m 650,79 c 0,-12.8 3.4,-24.7 9.4,-35 H 500.6 470 379.4 c -6,10.3 -9.4,22.2 -9.4,35 0,12.8 3.4,24.7 9.4,35 H 470 500.6 659.4 C 653.4,103.7 650,91.8 650,79 Z"
+       id="path1176"
+       inkscape:connector-curvature="0"
+       style="display:inline;fill:#000000;fill-opacity:1"
+       inkscape:label="homeColor1" /></clipPath><clipPath
+     clipPathUnits="userSpaceOnUse"
+     id="clipPath1193"><path
+       class="st13"
+       d="M 1120.6,44 H 1030 999.4 840.6 c 6,10.3 9.4,22.2 9.4,35 0,12.8 -3.4,24.7 -9.4,35 h 158.8 30.6 90.6 c 6,-10.3 9.4,-22.2 9.4,-35 0,-12.8 -3.4,-24.7 -9.4,-35 z"
+       id="path1195"
+       inkscape:connector-curvature="0"
+       style="display:inline;fill:#041e42;fill-opacity:1"
+       inkscape:label="awayColor1" /></clipPath></defs><sodipodi:namedview
    pagecolor="#ffffff"
    bordercolor="#666666"
    borderopacity="1"
@@ -250,7 +266,7 @@
    showgrid="false"
    inkscape:pagecheckerboard="true"
    inkscape:zoom="1.2375"
-   inkscape:cx="602.96968"
+   inkscape:cx="450.24241"
    inkscape:cy="81.604575"
    inkscape:window-x="900"
    inkscape:window-y="32"
@@ -409,6 +425,7 @@
    style="font-size:29.41889954px;font-family:TradeGothicNextLTPro-Rg;fill:#ffffff">Power Play</text>
 
 
+
 	</g>
 	<g
    id="home_pp"
@@ -497,6 +514,7 @@
    class="st5 st6 st7"
    id="text83"
    style="font-size:29.41889954px;font-family:TradeGothicNextLTPro-Rg;fill:#ffffff">Power Play</text>
+
 
 
 	</g>
@@ -646,6 +664,7 @@
    style="font-size:35px;font-family:TradeGothicNextLTPro-Rg;fill:#ffffff">PP</text>
 
 
+
 		<rect
    x="860"
    y="124"
@@ -659,6 +678,7 @@
    class="st5 st6 st11"
    id="text142"
    style="font-size:35px;font-family:TradeGothicNextLTPro-Rg;fill:#ffffff">2:00</text>
+
 
 
 	</g>
@@ -785,6 +805,7 @@
    style="font-size:35px;font-family:TradeGothicNextLTPro-Rg;fill:#ffffff">PP</text>
 
 
+
 		<rect
    x="571"
    y="124"
@@ -798,6 +819,7 @@
    class="st5 st6 st11"
    id="text194"
    style="font-size:35px;font-family:TradeGothicNextLTPro-Rg;fill:#ffffff">2:00</text>
+
 
 
 	</g>
@@ -857,7 +879,14 @@
    id="awayColor1"
    inkscape:connector-curvature="0"
    style="display:inline;fill:#041e42;fill-opacity:1"
-   inkscape:label="awayColor1" />
+   inkscape:label="awayColor1" /><path
+   style="display:inline;fill:#ff0000;fill-opacity:0.58695649;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+   d="m 1120.6,114 c 4.3671,-37.19509 -30.4249,-47.92807 -47.9169,-52.40468 -16.5055,-4.22412 -57.612,-29.19041 -57.612,-29.19041 l 63.2769,55.70448 c 0,0 44.4136,55.15546 42.252,25.89061 z"
+   id="awayColor3"
+   inkscape:connector-curvature="0"
+   sodipodi:nodetypes="csccc"
+   inkscape:label="#path1141-2"
+   clip-path="url(#clipPath1193)" />
 		
 			
 		<rect
@@ -874,6 +903,7 @@
    id="awayName"
    style="font-size:45px;font-family:TradeGothicNextLTPro-Rg;fill:#ffffff"
    inkscape:label="awayName">RPI</text>
+
 
 
 	</g>
@@ -982,7 +1012,15 @@
    inkscape:label="homeName">RPI</text>
 
 
-	</g>
+
+	<path
+   style="fill:#ff0000;fill-opacity:0.58695649;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+   d="m 370.68883,121.67413 c -4.3671,-37.195091 30.42487,-47.928071 47.91691,-52.404681 16.50545,-4.22412 57.61197,-29.19041 57.61197,-29.19041 l -63.27688,55.70448 c 0,0 -44.41358,55.155461 -42.252,25.890611 z"
+   id="homeColor3"
+   inkscape:connector-curvature="0"
+   sodipodi:nodetypes="csccc"
+   inkscape:label="#path1141"
+   clip-path="url(#clipPath1174)" /></g>
 	
 	
 	

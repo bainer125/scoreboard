@@ -3,7 +3,7 @@ color1=homeColor{style(fill:><)}&&awayPenaltyColor{style(fill:><;fill-opacity:0.
 #color2
 #color3
 #color4
-#logo1
+#logo1=homeLogo{xlink:href(><)}
 #logo2
 #logo3
 #logo4
@@ -21,7 +21,7 @@ color1=awayColor{style(fill:><)}&&homePenaltyColor{style(fill:><;fill-opacity:0.
 #color2
 #color3
 #color4
-#logo1
+#logo1=awayLogo{xlink:href(><)}
 #logo2
 #logo3
 #logo4

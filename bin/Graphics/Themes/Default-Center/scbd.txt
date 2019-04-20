@@ -11,8 +11,7 @@ color1=homeColor{style(fill:><)}&&awayPenaltyColor{style(fill:><;fill-opacity:0.
 
 HomeTeamVals
 #fullName
-#name
-abbr=homeName
+name=homeName
 #mascot
 
 
@@ -29,8 +28,7 @@ color1=awayColor{style(fill:><)}&&homePenaltyColor{style(fill:><;fill-opacity:0.
 
 AwayTeamVals
 #fullName
-#name
-abbr=awayName
+name=awayName
 #mascot
 
 

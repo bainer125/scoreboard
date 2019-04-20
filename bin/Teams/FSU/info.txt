@@ -1,0 +1,8 @@
+ fullName=Fredonia State University
+ name=Fredonia State
+ abbr=FSU
+ mascot=Blue Devils
+ color1=#0033A0
+ color2=#000000
+ color3=#ffffff
+ 

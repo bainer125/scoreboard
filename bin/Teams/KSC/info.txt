@@ -1,0 +1,9 @@
+ fullName=Keene State College
+ name=Keene State
+ abbr=KSC
+ mascot=Owls
+ color1=#CE1126
+ color2=#000000
+ color3=#ffffff
+ color4=#999999
+ 

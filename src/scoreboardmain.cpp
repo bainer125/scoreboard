@@ -58,6 +58,8 @@ static string Window_Name = "Scoreboard Control Panel"; //Please Change this aft
 static QString clock_text = "00:00";   //the clock text
 static QString last_clock_text = "00:00";
 
+static QDir homeDir, awayDir;
+
 ScoreboardMain::ScoreboardMain(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::ScoreboardMain)
@@ -328,13 +330,9 @@ void ScoreboardMain::on_Update_Team_Button_clicked() //Update Team Name Button
       }
       Away_Color.close();
     }
-    QString homeback = "background: url(./Teams/";
-    homeback.append(ui->Home_Option->currentText());
-    homeback.append("/itmsn_home.png)");
-    QString awayback = "background: url(./Teams/";
-    awayback.append(ui->Away_Option->currentText());
-    awayback.append("/itmsn_away.png)");
-    ol->updateTeams(HomeN,AwayN,QString::fromStdString(home_color),QString::fromStdString(away_color));
+    homeDir.setPath("./Teams/"+ui->Home_Option->currentText());
+    awayDir.setPath("./Teams/"+ui->Away_Option->currentText());
+    ol->updateTeams(homeDir,awayDir);
 }
 
 void ScoreboardMain::on_Reset_Score_Button_clicked() //Reset Score Button

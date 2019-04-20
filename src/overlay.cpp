@@ -28,20 +28,22 @@ static QSvgRenderer renderer;
 // Values used to determine ID tags in svg themes
 
 static QVector<QVector<QVector<QString>>> homeAttr(8), awayAttr(8), scbdGroups(5);
+
 static QVector<QString> teamAttr = {"color1","color2","color3","color4","logo1","logo2","logo3","logo4"};
 static QVector<QString> teamVals = {"fullName","name","abbr","mascot"};
 static QVector<QString> gameValueTags = {"clockText","periodText","homeScore","awayScore","homeShots", \
                                          "awayShots","homeHits","awayHits","homePenaltyText","homePenaltyClock", \
                                          "awayPenaltyText","awayPenaltyClock","evenPenaltyText","evenPenaltyClock"};
 static QVector<QString> groupTags = {"homePenalty","awayPenalty","evenPenalty","shotsView","hitsView"};
+
 static QVector<QString> homeVals(4), awayVals(4), gameVals(14);
 
+static QVector<QString> homeTeamConf(8), awayTeamConf(8);
+static QVector<QString> teamConf = {"fullName","name","abbr","mascot","color1","color2","color3","color4"};
 
 
-static QString periodText = "periodText", clockText = "clockText", homeName = "homeName", \
-        awayName = "awayName", homeScore = "homeScore", awayScore = "awayScore";
+static QString periodText = "periodText", clockText = "clockText", homeScore = "homeScore", awayScore = "awayScore";
 static QString homeShots = "homeShots", awayShots = "awayShots";
-static QString homeColor = "homeColor", awayColor = "awayColor";
 
 Overlay::Overlay(QWidget *parent) :
     QDialog(parent),
@@ -63,29 +65,121 @@ void Overlay::updateClock(QString clock_text){
     paintScoreboard(scbdData);
 }
 
-void Overlay::updateTeams(QString home_name, QString away_name, QString home_color, QString away_color){
+void Overlay::updateTeams(QDir homeDir, QDir awayDir){
     /* Covers all graphic portions to be updated on a team change
      * Anything that is set in the theme config file will be changed here
      */
+
+    loadTeamConf(homeDir,awayDir);
     for(int i=0;i<homeAttr.size();i++){
         for(int j=0;j<homeAttr[i].size();j++){
             if(teamAttr[i]=="color1"){
-                scbdData=svg.updateAttr(scbdData,homeAttr[i][j][0],homeAttr[i][j][1],homeAttr[i][j][2]+home_color+homeAttr[i][j][3]);
+                scbdData=svg.updateAttr(scbdData,homeAttr[i][j][0],homeAttr[i][j][1],homeAttr[i][j][2]+homeTeamConf[4]+homeAttr[i][j][3]);
+            }
+            if(teamAttr[i]=="color2"){
+                scbdData=svg.updateAttr(scbdData,homeAttr[i][j][0],homeAttr[i][j][1],homeAttr[i][j][2]+homeTeamConf[5]+homeAttr[i][j][3]);
+            }
+            if(teamAttr[i]=="color3"){
+                scbdData=svg.updateAttr(scbdData,homeAttr[i][j][0],homeAttr[i][j][1],homeAttr[i][j][2]+homeTeamConf[6]+homeAttr[i][j][3]);
+            }
+            if(teamAttr[i]=="color4"){
+                scbdData=svg.updateAttr(scbdData,homeAttr[i][j][0],homeAttr[i][j][1],homeAttr[i][j][2]+homeTeamConf[7]+homeAttr[i][j][3]);
+            }
+            if(teamAttr[i]=="logo1"){
+                scbdData=svg.updateAttr(scbdData,homeAttr[i][j][0],homeAttr[i][j][1],homeAttr[i][j][2]+homeDir.path()+"/logo1.png"+homeAttr[i][j][3]);
             }
         }
     }
     for(int i=0;i<awayAttr.size();i++){
         for(int j=0;j<awayAttr[i].size();j++){
             if(teamAttr[i]=="color1"){
-                scbdData=svg.updateAttr(scbdData,awayAttr[i][j][0],awayAttr[i][j][1],awayAttr[i][j][2]+away_color+awayAttr[i][j][3]);
+                scbdData=svg.updateAttr(scbdData,awayAttr[i][j][0],awayAttr[i][j][1],awayAttr[i][j][2]+awayTeamConf[4]+awayAttr[i][j][3]);
+            }
+            if(teamAttr[i]=="color2"){
+                scbdData=svg.updateAttr(scbdData,awayAttr[i][j][0],awayAttr[i][j][1],awayAttr[i][j][2]+awayTeamConf[5]+awayAttr[i][j][3]);
+            }
+            if(teamAttr[i]=="color3"){
+                scbdData=svg.updateAttr(scbdData,awayAttr[i][j][0],awayAttr[i][j][1],awayAttr[i][j][2]+awayTeamConf[6]+awayAttr[i][j][3]);
+            }
+            if(teamAttr[i]=="color4"){
+                scbdData=svg.updateAttr(scbdData,awayAttr[i][j][0],awayAttr[i][j][1],awayAttr[i][j][2]+awayTeamConf[7]+awayAttr[i][j][3]);
+            }
+            if(teamAttr[i]=="logo1"){
+                scbdData=svg.updateAttr(scbdData,awayAttr[i][j][0],awayAttr[i][j][1],awayAttr[i][j][2]+awayDir.path()+"/logo1.png"+awayAttr[i][j][3]);
             }
         }
     }
-    scbdData=svg.updateVal(scbdData,homeName,home_name);
-    scbdData=svg.updateVal(scbdData,awayName,away_name);
+    for(int i=0;i<teamVals.size();i++){
+        if(teamVals[i]=="fullName"){
+            scbdData=svg.updateVal(scbdData,homeVals[i],homeTeamConf[0]);
+        }
+        if(teamVals[i]=="name"){
+            scbdData=svg.updateVal(scbdData,homeVals[i],homeTeamConf[1]);
+        }
+        if(teamVals[i]=="abbr"){
+            scbdData=svg.updateVal(scbdData,homeVals[i],homeTeamConf[2]);
+        }
+        if(teamVals[i]=="mascot"){
+            scbdData=svg.updateVal(scbdData,homeVals[i],homeTeamConf[3]);
+        }
+    }
+    for(int i=0;i<teamVals.size();i++){
+        if(teamVals[i]=="fullName"){
+            scbdData=svg.updateVal(scbdData,awayVals[i],awayTeamConf[0]);
+        }
+        if(teamVals[i]=="name"){
+            scbdData=svg.updateVal(scbdData,awayVals[i],awayTeamConf[1]);
+        }
+        if(teamVals[i]=="abbr"){
+            scbdData=svg.updateVal(scbdData,awayVals[i],awayTeamConf[2]);
+        }
+        if(teamVals[i]=="mascot"){
+            scbdData=svg.updateVal(scbdData,awayVals[i],awayTeamConf[3]);
+        }
+    }
 
     paintScoreboard(scbdData);
 }
+
+void Overlay::loadTeamConf(QDir homeDir, QDir awayDir){
+
+    QString line;
+
+    QFile homeConfFile(homeDir.path()+"/info.txt");
+    if(homeConfFile.open(QIODevice::ReadOnly)){
+        QTextStream in(&homeConfFile);
+        while(!in.atEnd()){
+            line = in.readLine();
+            line=line.trimmed();
+            if(line.contains("=")){
+                for(int i =0;i<teamConf.size();i++){
+                    if(teamConf[i]==line.split("=")[0]){
+                        homeTeamConf.replace(i,line.split("=")[1]);
+                    }
+                }
+            }
+        }
+        homeConfFile.close();
+    }
+
+    QFile awayConfFile(awayDir.path()+"/info.txt");
+    if(awayConfFile.open(QIODevice::ReadOnly)){
+        QTextStream ni(&awayConfFile);
+        while(!ni.atEnd()){
+            line = ni.readLine();
+            line=line.trimmed();
+            if(line.contains("=")){
+                for(int i =0;i<teamConf.size();i++){
+                    if(teamConf[i]==line.split("=")[0]){
+                        awayTeamConf.replace(i,line.split("=")[1]);
+                    }
+                }
+            }
+        }
+        homeConfFile.close();
+    }
+}
+
 void Overlay::updatePeriod(int period){
     QString strPeriod = QString::number(period);
     if(period == 1){
@@ -430,6 +524,15 @@ void Overlay::parsescbdConfig(QVector<QString> config){
     QVector<QString> attrlist;
 
 
+    for(int z =0;z<teamVals.size();z++){
+        homeVals.replace(z,"");
+        awayVals.replace(z,"");
+    }
+    for(int k=0;k<teamAttr.size();k++){
+        homeAttr[k].clear();
+        awayAttr[k].clear();
+    }
+
     for(int i=0;i<config.size();i++){
         QString line = config[i].trimmed();
         if(line.begin()==QString::fromStdString("#")||line.begin()==line.end()){
@@ -497,7 +600,7 @@ void Overlay::parsescbdConfig(QVector<QString> config){
                     else if(flag==1){
                         for(int j=0;j<teamVals.size();j++){
                             if(tag==teamVals[j]){
-                                homeVals.insert(j,line.split("=")[1]);
+                                homeVals.replace(j,line.split("=")[1]);
                                 break;
                             }
                         }
@@ -536,7 +639,7 @@ void Overlay::parsescbdConfig(QVector<QString> config){
                     else if(flag==3){
                         for(int j=0;j<teamVals.size();j++){
                             if(tag==teamVals[j]){
-                                awayVals.insert(j,line.split("=")[1]);
+                                awayVals.replace(j,line.split("=")[1]);
                                 break;
                             }
                         }
@@ -544,7 +647,7 @@ void Overlay::parsescbdConfig(QVector<QString> config){
                     else if(flag==4){
                         for(int j=0;j<gameValueTags.size();j++){
                             if(tag==gameValueTags[j]){
-                                gameVals.insert(j,line.split("=")[1]);
+                                gameVals.replace(j,line.split("=")[1]);
                                 break;
                             }
                         }

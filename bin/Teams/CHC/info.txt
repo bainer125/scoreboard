@@ -1,0 +1,8 @@
+ fullName=College of the Holy Cross
+ name=Holy Cross
+ abbr=CHC
+ mascot=Crusaders
+ color1=#602d89
+ color2=#FFFFFF
+ color3=#000000
+ 

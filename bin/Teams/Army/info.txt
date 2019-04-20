@@ -1,0 +1,8 @@
+ fullName=United States Military Academy
+ name=Army
+ abbr=USMA
+ mascot=Black Knights
+ color1=#D4BF91
+ color2=#000000
+ color3=#B2B4B3
+ color4=#ffffff

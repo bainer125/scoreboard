@@ -1,0 +1,8 @@
+ fullName=Boston College
+ name=Boston College
+ abbr=BC
+ mascot=Eagles
+ color1=#98002E
+ color2=#BC9B6A
+ color3=#ffffff
+ 

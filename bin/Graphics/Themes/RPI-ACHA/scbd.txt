@@ -1,6 +1,6 @@
 HomeTeamAttr
 color1=homeColor1{style(fill:><)}&&awayPenaltyColor{style(fill:><;fill-opacity:0.784)}&&homeShotsColor{style(fill:><)}
-#color2
+color2=homeColor3{style(display:inline;fill:><;fill-opacity:1)}
 #color3
 #color4
 #logo1
@@ -18,7 +18,7 @@ abbr=homeName
 
 AwayTeamAttr
 color1=awayColor1{style(display:inline;fill:><;fill-opacity:1)}&&stop228{style(stop-color:><;stop-opacity:0)}&&homePenaltyColor{style(fill:><;fill-opacity:0.784)}&&awayShotsColor{style(fill:><)}
-color2=stop198{style(stop-color:><;stop-opacity:1)}&&stop230{style(stop-color:><;stop-opacity:1)}
+color2=awayColor3{style(display:inline;fill:><;fill-opacity:1)}&&stop198{style(stop-color:><;stop-opacity:1)}&&stop230{style(stop-color:><;stop-opacity:1)}
 #color3
 #color4
 #logo1

@@ -7,11 +7,11 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="585"
+   width="702.1369"
    height="70"
    version="1.1"
    id="svg39"
-   sodipodi:docname="bscbd.svg"
+   sodipodi:docname="scbd.svg"
    inkscape:version="0.92.4 5da689c313, 2019-01-14">
   <metadata
      id="metadata45">
@@ -41,12 +41,12 @@
      id="namedview41"
      showgrid="false"
      inkscape:zoom="2.1001071"
-     inkscape:cx="161.36444"
+     inkscape:cx="370.65653"
      inkscape:cy="-44.143958"
      inkscape:window-x="900"
      inkscape:window-y="32"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg39"
+     inkscape:current-layer="scoreboard"
      inkscape:pagecheckerboard="true"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -57,26 +57,27 @@
   <g
      style="display:inline"
      id="scoreboard"
-     inkscape:label="scoreboard">
+     inkscape:label="scoreboard"
+     transform="translate(117.13689)">
     <rect
        y="0"
-       x="195"
+       x="136.43155"
        height="35"
-       width="195"
+       width="253.56845"
        id="awayColor"
-       style="fill:#3c3b6e;fill-opacity:1;stroke:none;stroke-width:0.29179281;stroke-opacity:1"
+       style="fill:#3c3b6e;fill-opacity:1;stroke:none;stroke-width:0.33273992;stroke-opacity:1"
        inkscape:label="awayColor" />
     <rect
        y="0"
-       x="0"
+       x="-117.13689"
        height="35"
-       width="195"
+       width="253.56844"
        id="homeColor"
-       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.29390201;stroke-opacity:1"
+       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.33514509;stroke-opacity:1"
        inkscape:label="homeColor" />
     <rect
        y="0"
-       x="155"
+       x="96.431549"
        height="35"
        width="40"
        id="scoreShade"
@@ -97,15 +98,15 @@
        style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.29390204;stroke-opacity:1" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#ffffff;fill-opacity:1;stroke:none"
-       x="10"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="-11.903652"
        y="27"
        id="homeName"
        inkscape:label="homeName">CAN</text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:0.9;fill:#ffffff;fill-opacity:1;stroke:none"
-       x="205"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;opacity:0.9;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="243.56946"
        y="27"
        id="awayName"
        inkscape:label="awayName">USA</text>
@@ -124,7 +125,7 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.50230598px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none"
-       x="175"
+       x="116.43155"
        y="27"
        id="homeScore">2</text>
     <text
@@ -138,7 +139,7 @@
      style="display:none"
      id="evenPenalty"
      inkscape:label="evenPenalty"
-     transform="translate(390,-70)">
+     transform="translate(507.13689,-70)">
     <rect
        style="fill:#000000;fill-opacity:0.78431373;stroke:none;stroke-width:0.28254917;stroke-opacity:1"
        id="evenPenaltyColor"
@@ -166,13 +167,13 @@
      style="display:inline"
      id="awayPenalty"
      inkscape:label="awayPenalty"
-     transform="translate(0,-70)">
+     transform="translate(58.568443,-70)">
     <rect
-       style="fill:#ff0000;fill-opacity:0.78431373;stroke:none;stroke-width:0.28254917;stroke-opacity:1"
+       style="fill:#ff0000;fill-opacity:0.78431373;stroke:none;stroke-width:0.32219911;stroke-opacity:1"
        id="awayPenaltyColor"
-       width="195"
+       width="253.56845"
        height="35"
-       x="0"
+       x="-58.568443"
        y="105"
        inkscape:label="awayPenaltyColor" />
     <text
@@ -185,22 +186,22 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none"
-       x="65"
+       x="39.763191"
        y="130"
        id="awayPenaltyText"
        inkscape:label="awayPenaltyText">Power Play</text>
   </g>
   <g
-     style="display:none"
+     style="display:inline"
      id="homePenalty"
      inkscape:label="homePenalty"
-     transform="translate(195,-70)">
+     transform="translate(312.13689,-70)">
     <rect
-       style="fill:#3c3b6e;fill-opacity:0.78431373;stroke:none;stroke-width:0.28254917;stroke-opacity:1"
+       style="fill:#3c3b6e;fill-opacity:0.78431373;stroke:none;stroke-width:0.32219911;stroke-opacity:1"
        id="homePenaltyColor"
-       width="195"
+       width="253.56845"
        height="35"
-       x="0"
+       x="-58.568451"
        y="105"
        inkscape:label="homePenaltyColor" />
     <text
@@ -213,7 +214,7 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:1.25;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none"
-       x="65"
+       x="40.715523"
        y="130"
        id="homePenaltyText"
        inkscape:label="homePenaltyText">Power Play</text>
@@ -221,7 +222,8 @@
   <g
      style="display:none"
      id="shotsView"
-     inkscape:label="shotsView">
+     inkscape:label="shotsView"
+     transform="translate(117.13689)">
     <rect
        y="70"
        x="195"

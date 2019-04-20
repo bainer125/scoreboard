@@ -1,0 +1,8 @@
+ fullName=Erie Community College
+ name=Erie CC
+ abbr=ECC
+ mascot=Kats
+ color1=#cc092f
+ color2=#b3b3b3
+ color3=#000000
+ 
