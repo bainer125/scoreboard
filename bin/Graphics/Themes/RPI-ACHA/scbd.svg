@@ -266,7 +266,7 @@
    showgrid="false"
    inkscape:pagecheckerboard="true"
    inkscape:zoom="1.2375"
-   inkscape:cx="450.24241"
+   inkscape:cx="238.92995"
    inkscape:cy="81.604575"
    inkscape:window-x="900"
    inkscape:window-y="32"
@@ -426,6 +426,7 @@
 
 
 
+
 	</g>
 	<g
    id="home_pp"
@@ -514,6 +515,7 @@
    class="st5 st6 st7"
    id="text83"
    style="font-size:29.41889954px;font-family:TradeGothicNextLTPro-Rg;fill:#ffffff">Power Play</text>
+
 
 
 
@@ -665,6 +667,7 @@
 
 
 
+
 		<rect
    x="860"
    y="124"
@@ -678,6 +681,7 @@
    class="st5 st6 st11"
    id="text142"
    style="font-size:35px;font-family:TradeGothicNextLTPro-Rg;fill:#ffffff">2:00</text>
+
 
 
 
@@ -806,6 +810,7 @@
 
 
 
+
 		<rect
    x="571"
    y="124"
@@ -819,6 +824,7 @@
    class="st5 st6 st11"
    id="text194"
    style="font-size:35px;font-family:TradeGothicNextLTPro-Rg;fill:#ffffff">2:00</text>
+
 
 
 
@@ -898,11 +904,13 @@
    id="rect237"
    style="fill:none" />
 		<text
-   transform="translate(960.3856,95.0556)"
    class="st5 st6 st14"
    id="awayName"
-   style="font-size:45px;font-family:TradeGothicNextLTPro-Rg;fill:#ffffff"
-   inkscape:label="awayName">RPI</text>
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:45px;font-family:TradeGothicNextLTPro-Rg;-inkscape-font-specification:'TradeGothicNextLTPro-Rg, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;fill:#ffffff"
+   inkscape:label="awayName"
+   x="1029.0725"
+   y="95.055603">RPI</text>
+
 
 
 
@@ -1010,6 +1018,7 @@
    id="homeName"
    style="font-size:45px;font-family:TradeGothicNextLTPro-Rg;fill:#ffffff"
    inkscape:label="homeName">RPI</text>
+
 
 
 
