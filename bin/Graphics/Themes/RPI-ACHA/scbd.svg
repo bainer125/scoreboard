@@ -22,7 +22,7 @@
    inkscape:version="0.92.4 5da689c313, 2019-01-14"><metadata
    id="metadata1081"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
    id="defs1079"><linearGradient
      y2="114"
      x2="985.30603"
@@ -309,7 +309,57 @@
      x1="700"
      y1="44"
      x2="700"
-     y2="114" /></defs><sodipodi:namedview
+     y2="114" /><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Drop Shadow"
+     id="filter1416"><feFlood
+       flood-opacity="1"
+       flood-color="rgb(255,255,255)"
+       result="flood"
+       id="feFlood1406" /><feComposite
+       in="flood"
+       in2="SourceGraphic"
+       operator="in"
+       result="composite1"
+       id="feComposite1408" /><feGaussianBlur
+       in="composite1"
+       stdDeviation="5.69948"
+       result="blur"
+       id="feGaussianBlur1410" /><feOffset
+       dx="8.32667e-17"
+       dy="1.38778e-16"
+       result="offset"
+       id="feOffset1412" /><feComposite
+       in="SourceGraphic"
+       in2="offset"
+       operator="over"
+       result="composite2"
+       id="feComposite1414" /></filter><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Drop Shadow"
+     id="filter1428"><feFlood
+       flood-opacity="1"
+       flood-color="rgb(255,255,255)"
+       result="flood"
+       id="feFlood1418" /><feComposite
+       in="flood"
+       in2="SourceGraphic"
+       operator="in"
+       result="composite1"
+       id="feComposite1420" /><feGaussianBlur
+       in="composite1"
+       stdDeviation="5.7"
+       result="blur"
+       id="feGaussianBlur1422" /><feOffset
+       dx="8.32667e-17"
+       dy="1.38778e-16"
+       result="offset"
+       id="feOffset1424" /><feComposite
+       in="SourceGraphic"
+       in2="offset"
+       operator="over"
+       result="composite2"
+       id="feComposite1426" /></filter></defs><sodipodi:namedview
    pagecolor="#ffffff"
    bordercolor="#666666"
    borderopacity="1"
@@ -323,13 +373,13 @@
    id="namedview1077"
    showgrid="false"
    inkscape:pagecheckerboard="true"
-   inkscape:zoom="0.61875001"
-   inkscape:cx="1000.1238"
-   inkscape:cy="-77.478958"
+   inkscape:zoom="3.5001786"
+   inkscape:cx="191.23621"
+   inkscape:cy="144.1137"
    inkscape:window-x="900"
    inkscape:window-y="32"
    inkscape:window-maximized="1"
-   inkscape:current-layer="homePenalty"
+   inkscape:current-layer="RPI_home"
    fit-margin-top="0"
    fit-margin-left="0"
    fit-margin-right="0"
@@ -491,6 +541,7 @@
 
 
 
+
 	</g>
 	<g
    id="home_pp"
@@ -579,6 +630,7 @@
    class="st5 st6 st7"
    id="text83"
    style="font-size:29.41889954px;font-family:TradeGothicNextLTPro-Rg;fill:#ffffff">Power Play</text>
+
 
 
 
@@ -749,6 +801,7 @@
 
 
 
+
 		<rect
    x="860"
    y="124"
@@ -763,6 +816,7 @@
    id="homePenaltyClock"
    style="font-size:34.99972072px;font-family:'Trade Gothic Next LT Pro';fill:#ffffff;-inkscape-font-specification:'Trade Gothic Next LT Pro, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
    inkscape:label="#text142">2:00</text>
+
 
 
 
@@ -908,6 +962,7 @@
 
 
 
+
 		<rect
    x="571"
    y="124"
@@ -922,6 +977,7 @@
    id="awayPenaltyClock"
    style="font-size:34.99972072px;font-family:'Trade Gothic Next LT Pro';fill:#ffffff;-inkscape-font-specification:'Trade Gothic Next LT Pro, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
    inkscape:label="#text194">2:00</text>
+
 
 
 
@@ -1002,14 +1058,14 @@
    style="fill:none" /><image
    sodipodi:absref="/home/bainer/Documents/Git/scoreboard/bin/Graphics/Themes/RPI-ACHA/../Default-Corner/awaylogo1.png"
    xlink:href="../Default-Corner/awaylogo1.png"
-   inkscape:label="awayLogo"
-   width="66.878609"
-   height="66.878609"
-   preserveAspectRatio="xMidyMid"
-   style="display:inline;image-rendering:optimizeQuality"
-   id="awayLogo"
+   y="45.152279"
    x="1041.8053"
-   y="45.152279" />
+   id="awayLogo"
+   style="display:inline;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter1416);image-rendering:optimizeQuality"
+   preserveAspectRatio="xMidyMid"
+   height="66.878609"
+   width="66.878609"
+   inkscape:label="awayLogo" />
 		<text
    class="st5 st6 st14"
    id="awayName"
@@ -1017,6 +1073,7 @@
    inkscape:label="awayName"
    x="1029.0725"
    y="95.055603">RPI</text>
+
 
 
 
@@ -1141,17 +1198,18 @@
 
 
 
+
 	<image
    sodipodi:absref="/home/bainer/Documents/Git/scoreboard/bin/Graphics/Themes/RPI-ACHA/../Default-Corner/homelogo1.png"
    xlink:href="../Default-Corner/homelogo1.png"
-   inkscape:label="homeLogo"
-   width="66.878609"
-   height="66.878609"
-   preserveAspectRatio="xMidYMid"
-   style="image-rendering:optimizeQuality"
-   id="homeLogo"
+   y="45.152279"
    x="392.91644"
-   y="45.152279" /></g>
+   id="homeLogo"
+   style="image-rendering:optimizeQuality;filter:url(#filter1428)"
+   preserveAspectRatio="xMidYMid"
+   height="66.878609"
+   width="66.878609"
+   inkscape:label="homeLogo" /></g>
 	
 	
 	
@@ -1866,24 +1924,28 @@
    x="1360.371"
    y="94.944412"
    id="periodText">1st</text>
+
 <text
    xml:space="preserve"
    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:45px;line-height:1.25;font-family:'Trade Gothic Next LT Pro';-inkscape-font-specification:'Trade Gothic Next LT Pro, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.56862748"
    x="688.95624"
    y="93.277824"
    id="homeScore">2</text>
+
 <text
    xml:space="preserve"
    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:45px;line-height:1.25;font-family:'Trade Gothic Next LT Pro';-inkscape-font-specification:'Trade Gothic Next LT Pro, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.56862748"
    x="1518.6826"
    y="94.944412"
    id="clockText">18:24</text>
+
 <text
    xml:space="preserve"
    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:45px;line-height:1.25;font-family:'Trade Gothic Next LT Pro';-inkscape-font-specification:'Trade Gothic Next LT Pro, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.56862748"
    x="787.80835"
    y="94.468254"
    id="awayScore">1</text>
+
 
 </g>
 </svg>
