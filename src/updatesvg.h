@@ -11,6 +11,7 @@ class updatesvg
 public:
     QByteArray updateAttr(QByteArray pic, QString id, QString attr, QString val);
     QByteArray updateVal(QByteArray pic, QString id, QString val);
+    QVector<QByteArray> splitText(QByteArray og);
     void findElementAttr( QDomElement& elem, QString id, QString attr, QString val);
     void findElementVal( QDomElement& elem, QString id, QString val);
 };

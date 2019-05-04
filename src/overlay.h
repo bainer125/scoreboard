@@ -5,6 +5,7 @@
 #include <QString>
 #include <QFile>
 #include <QDir>
+#include <QSvgWidget>
 
 namespace Ui {
     class Overlay;

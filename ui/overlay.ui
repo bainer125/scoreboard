@@ -44,6 +44,32 @@
     <string/>
    </property>
   </widget>
+  <widget class="QOpenGLWidget" name="Scoreboard2">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>690</y>
+     <width>941</width>
+     <height>361</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: transparent</string>
+   </property>
+  </widget>
+  <widget class="QGraphicsView" name="Scoreboard3">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>280</y>
+     <width>1391</width>
+     <height>251</height>
+    </rect>
+   </property>
+   <property name="renderHints">
+    <set>QPainter::Antialiasing|QPainter::SmoothPixmapTransform|QPainter::TextAntialiasing</set>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

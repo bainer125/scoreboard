@@ -13,16 +13,16 @@
    version="1.1"
    x="0px"
    y="0px"
-   viewBox="0 0 1255 75"
+   viewBox="0 0 1255 120.5"
    xml:space="preserve"
    id="svg1075"
    sodipodi:docname="scbd.svg"
    width="1255"
-   height="75"
+   height="120.5"
    inkscape:version="0.92.4 5da689c313, 2019-01-14"><metadata
    id="metadata1081"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
    id="defs1079"><linearGradient
      y2="114"
      x2="985.30603"
@@ -251,7 +251,65 @@
        id="path1195"
        inkscape:connector-curvature="0"
        style="display:inline;fill:#041e42;fill-opacity:1"
-       inkscape:label="awayColor1" /></clipPath></defs><sodipodi:namedview
+       inkscape:label="awayColor1" /></clipPath><filter
+     style="color-interpolation-filters:sRGB"
+     inkscape:label="Drop Shadow"
+     id="filter4218"><feFlood
+       flood-opacity="1"
+       flood-color="rgb(0,0,0)"
+       result="flood"
+       id="feFlood4208" /><feComposite
+       in="flood"
+       in2="SourceGraphic"
+       operator="in"
+       result="composite1"
+       id="feComposite4210" /><feGaussianBlur
+       in="composite1"
+       stdDeviation="0.7"
+       result="blur"
+       id="feGaussianBlur4212" /><feOffset
+       dx="1.1"
+       dy="1.1"
+       result="offset"
+       id="feOffset4214" /><feComposite
+       in="SourceGraphic"
+       in2="offset"
+       operator="over"
+       result="composite2"
+       id="feComposite4216" /></filter><filter
+     style="color-interpolation-filters:sRGB"
+     inkscape:label="Drop Shadow"
+     id="filter4230"><feFlood
+       flood-opacity="1"
+       flood-color="rgb(0,0,0)"
+       result="flood"
+       id="feFlood4220" /><feComposite
+       in="flood"
+       in2="SourceGraphic"
+       operator="in"
+       result="composite1"
+       id="feComposite4222" /><feGaussianBlur
+       in="composite1"
+       stdDeviation="0.7"
+       result="blur"
+       id="feGaussianBlur4224" /><feOffset
+       dx="1.1"
+       dy="1.1"
+       result="offset"
+       id="feOffset4226" /><feComposite
+       in="SourceGraphic"
+       in2="offset"
+       operator="over"
+       result="composite2"
+       id="feComposite4228" /></filter><linearGradient
+     inkscape:collect="always"
+     xlink:href="#SVGID_19_"
+     id="linearGradient4234"
+     gradientUnits="userSpaceOnUse"
+     x1="700"
+     y1="44"
+     x2="700"
+     y2="114" /></defs><sodipodi:namedview
    pagecolor="#ffffff"
    bordercolor="#666666"
    borderopacity="1"
@@ -265,13 +323,13 @@
    id="namedview1077"
    showgrid="false"
    inkscape:pagecheckerboard="true"
-   inkscape:zoom="1.2375"
-   inkscape:cx="238.92995"
-   inkscape:cy="81.604575"
+   inkscape:zoom="0.61875001"
+   inkscape:cx="1000.1238"
+   inkscape:cy="-77.478958"
    inkscape:window-x="900"
    inkscape:window-y="32"
    inkscape:window-maximized="1"
-   inkscape:current-layer="RPI_away"
+   inkscape:current-layer="homePenalty"
    fit-margin-top="0"
    fit-margin-left="0"
    fit-margin-right="0"
@@ -427,6 +485,12 @@
 
 
 
+
+
+
+
+
+
 	</g>
 	<g
    id="home_pp"
@@ -519,17 +583,24 @@
 
 
 
+
+
+
+
+
+
 	</g>
 </g>
 <g
    id="power_plays_tangent"
    class="st0"
-   style="display:none"
+   style="display:inline"
    transform="translate(-367.5,-41.5)">
 	<g
-   id="away_pp_1_"
+   id="homePenalty"
    class="st2"
-   style="display:inline">
+   style="display:inline"
+   inkscape:label="#away_pp_1_">
 		<g
    class="st0"
    id="g91"
@@ -543,7 +614,7 @@
    style="display:inline;fill:#4f504e" />
 			<polygon
    class="st9"
-   points="1010.5,29.5 1109.5,128.5 973.7,264.3 "
+   points="1109.5,128.5 973.7,264.3 1010.5,29.5 "
    id="polygon89"
    style="display:inline;fill:#4f504e" />
 		</g>
@@ -560,7 +631,7 @@
    style="display:inline;fill:#4f504e" />
 			<polygon
    class="st9"
-   points="730.5,29.5 829.5,128.5 693.7,264.3 "
+   points="829.5,128.5 693.7,264.3 730.5,29.5 "
    id="polygon95"
    style="display:inline;fill:#4f504e" />
 		</g>
@@ -631,9 +702,10 @@
 		<path
    class="st10"
    d="m 1062.9,114.5 h -20.4 -45.3 -79 -1.5 -20.4 -6.3 -7.1 -27.9 -9.8 -4.4 c -4,6.6 -6.3,14.3 -6.3,22.5 0,8.2 2.3,15.9 6.3,22.5 h 4.4 9.8 27.9 7.1 6.3 20.4 1.5 72 52.4 20.4 15.5 l 31,-31 c 3.6,-3.6 6.7,-7.5 9.4,-11.7 0.4,-0.8 0.8,-1.6 1.3,-2.3 z"
-   id="path128"
+   id="homePenaltyColor"
    inkscape:connector-curvature="0"
-   style="fill:url(#SVGID_3_);stroke:#ffffff;stroke-width:5;stroke-miterlimit:10" />
+   style="fill:#ca3934;fill-opacity:1;stroke:#ffffff;stroke-width:5;stroke-miterlimit:10"
+   inkscape:label="#path128" />
 		<g
    class="st0"
    id="g134"
@@ -647,7 +719,7 @@
    style="display:inline;fill:#4f504e" />
 			<polygon
    class="st9"
-   points="730.5,29.5 829.5,128.5 693.7,264.3 "
+   points="829.5,128.5 693.7,264.3 730.5,29.5 "
    id="polygon132"
    style="display:inline;fill:#4f504e" />
 		</g>
@@ -660,10 +732,19 @@
    id="rect136"
    style="fill:none" />
 		<text
-   transform="matrix(1.037,0,0,1,1028.9351,149.1294)"
+   transform="scale(1.018332,0.98199804)"
    class="st5 st6 st11"
-   id="text138"
-   style="font-size:35px;font-family:TradeGothicNextLTPro-Rg;fill:#ffffff">PP</text>
+   id="homePenaltyText"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35.64133453px;font-family:'Trade Gothic Next LT Pro';-inkscape-font-specification:'Trade Gothic Next LT Pro, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;fill:#ffffff;stroke-width:1.018332"
+   inkscape:label="#text138"
+   x="1045.3278"
+   y="151.86324">PP</text>
+
+
+
+
+
+
 
 
 
@@ -679,17 +760,25 @@
 		<text
    transform="matrix(1.037,0,0,1,860,149.1294)"
    class="st5 st6 st11"
-   id="text142"
-   style="font-size:35px;font-family:TradeGothicNextLTPro-Rg;fill:#ffffff">2:00</text>
+   id="homePenaltyClock"
+   style="font-size:34.99972072px;font-family:'Trade Gothic Next LT Pro';fill:#ffffff;-inkscape-font-specification:'Trade Gothic Next LT Pro, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
+   inkscape:label="#text142">2:00</text>
+
+
+
+
+
+
 
 
 
 
 	</g>
 	<g
-   id="home_pp_1_"
+   id="awayPenalty"
    class="st2"
-   style="display:inline">
+   style="display:inline"
+   inkscape:label="#home_pp_1_">
 		<g
    class="st0"
    id="g149"
@@ -703,7 +792,7 @@
    style="display:inline;fill:#4f504e" />
 			<polygon
    class="st9"
-   points="489.5,29.5 390.5,128.5 526.3,264.3 "
+   points="390.5,128.5 526.3,264.3 489.5,29.5 "
    id="polygon147"
    style="display:inline;fill:#4f504e" />
 		</g>
@@ -720,7 +809,7 @@
    style="display:inline;fill:#4f504e" />
 			<polygon
    class="st9"
-   points="769.5,29.5 670.5,128.5 806.3,264.3 "
+   points="670.5,128.5 806.3,264.3 769.5,29.5 "
    id="polygon153"
    style="display:inline;fill:#4f504e" />
 		</g>
@@ -791,9 +880,10 @@
 		<path
    class="st12"
    d="m 658.7,114 h -4.4 -9.8 -27.9 -7.1 -6.3 -20.4 -1.5 -78.7 -45.7 -20.4 -57.2 c 0.3,0.5 0.5,1 0.8,1.5 2.8,4.6 6.2,9 10.2,13 L 421,159 h 15.7 20.4 52.7 71.6 1.5 20.4 6.3 7.1 27.9 9.8 4.4 c 4,-6.6 6.3,-14.3 6.3,-22.5 -0.1,-8.2 -2.4,-15.9 -6.4,-22.5 z"
-   id="path186"
+   id="awayPenaltyColor"
    inkscape:connector-curvature="0"
-   style="fill:url(#SVGID_4_);stroke:#ffffff;stroke-width:5;stroke-miterlimit:10" />
+   style="fill:#cda022;fill-opacity:1;stroke:#ffffff;stroke-width:5;stroke-miterlimit:10"
+   inkscape:label="#path186" />
 		<rect
    x="439.89999"
    y="124"
@@ -805,8 +895,15 @@
 		<text
    transform="matrix(1.037,0,0,1,439.9351,149.1294)"
    class="st5 st6 st11"
-   id="text190"
-   style="font-size:35px;font-family:TradeGothicNextLTPro-Rg;fill:#ffffff">PP</text>
+   id="awayPenaltyText"
+   style="font-size:34.99972072px;font-family:'Trade Gothic Next LT Pro';fill:#ffffff;-inkscape-font-specification:'Trade Gothic Next LT Pro, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
+   inkscape:label="#text190">PP</text>
+
+
+
+
+
+
 
 
 
@@ -822,8 +919,15 @@
 		<text
    transform="matrix(1.037,0,0,1,571,149.1294)"
    class="st5 st6 st11"
-   id="text194"
-   style="font-size:35px;font-family:TradeGothicNextLTPro-Rg;fill:#ffffff">2:00</text>
+   id="awayPenaltyClock"
+   style="font-size:34.99972072px;font-family:'Trade Gothic Next LT Pro';fill:#ffffff;-inkscape-font-specification:'Trade Gothic Next LT Pro, Normal';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
+   inkscape:label="#text194">2:00</text>
+
+
+
+
+
+
 
 
 
@@ -884,15 +988,8 @@
    d="M 1120.6,44 H 1030 999.4 840.6 c 6,10.3 9.4,22.2 9.4,35 0,12.8 -3.4,24.7 -9.4,35 h 158.8 30.6 90.6 c 6,-10.3 9.4,-22.2 9.4,-35 0,-12.8 -3.4,-24.7 -9.4,-35 z"
    id="awayColor1"
    inkscape:connector-curvature="0"
-   style="display:inline;fill:#041e42;fill-opacity:1"
-   inkscape:label="awayColor1" /><path
-   style="display:inline;fill:#ff0000;fill-opacity:0.58695649;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-   d="m 1120.6,114 c 4.3671,-37.19509 -30.4249,-47.92807 -47.9169,-52.40468 -16.5055,-4.22412 -57.612,-29.19041 -57.612,-29.19041 l 63.2769,55.70448 c 0,0 44.4136,55.15546 42.252,25.89061 z"
-   id="awayColor3"
-   inkscape:connector-curvature="0"
-   sodipodi:nodetypes="csccc"
-   inkscape:label="#path1141-2"
-   clip-path="url(#clipPath1193)" />
+   style="display:inline;fill:#ca3934;fill-opacity:1"
+   inkscape:label="awayColor1" />
 		
 			
 		<rect
@@ -902,14 +999,30 @@
    width="223.39999"
    height="32.5"
    id="rect237"
-   style="fill:none" />
+   style="fill:none" /><image
+   sodipodi:absref="/home/bainer/Documents/Git/scoreboard/bin/Graphics/Themes/RPI-ACHA/../Default-Corner/awaylogo1.png"
+   xlink:href="../Default-Corner/awaylogo1.png"
+   inkscape:label="awayLogo"
+   width="66.878609"
+   height="66.878609"
+   preserveAspectRatio="xMidyMid"
+   style="display:inline;image-rendering:optimizeQuality"
+   id="awayLogo"
+   x="1041.8053"
+   y="45.152279" />
 		<text
    class="st5 st6 st14"
    id="awayName"
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:45px;font-family:TradeGothicNextLTPro-Rg;-inkscape-font-specification:'TradeGothicNextLTPro-Rg, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;fill:#ffffff"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:45px;font-family:TradeGothicNextLTPro-Rg;-inkscape-font-specification:'TradeGothicNextLTPro-Rg, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;opacity:1;fill:#ffffff;filter:url(#filter4218)"
    inkscape:label="awayName"
    x="1029.0725"
    y="95.055603">RPI</text>
+
+
+
+
+
+
 
 
 
@@ -1000,7 +1113,7 @@
    d="m 650,79 c 0,-12.8 3.4,-24.7 9.4,-35 H 500.6 470 379.4 c -6,10.3 -9.4,22.2 -9.4,35 0,12.8 3.4,24.7 9.4,35 H 470 500.6 659.4 C 653.4,103.7 650,91.8 650,79 Z"
    id="homeColor1"
    inkscape:connector-curvature="0"
-   style="fill:#000000;fill-opacity:1"
+   style="fill:#cda022;fill-opacity:1"
    inkscape:label="homeColor1" />
 		
 			
@@ -1016,20 +1129,29 @@
    transform="translate(469.9998,95.0556)"
    class="st5 st6 st14"
    id="homeName"
-   style="font-size:45px;font-family:TradeGothicNextLTPro-Rg;fill:#ffffff"
+   style="font-size:45px;font-family:TradeGothicNextLTPro-Rg;fill:#ffffff;filter:url(#filter4230)"
    inkscape:label="homeName">RPI</text>
 
 
 
 
-	<path
-   style="fill:#ff0000;fill-opacity:0.58695649;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-   d="m 370.68883,121.67413 c -4.3671,-37.195091 30.42487,-47.928071 47.91691,-52.404681 16.50545,-4.22412 57.61197,-29.19041 57.61197,-29.19041 l -63.27688,55.70448 c 0,0 -44.41358,55.155461 -42.252,25.890611 z"
-   id="homeColor3"
-   inkscape:connector-curvature="0"
-   sodipodi:nodetypes="csccc"
-   inkscape:label="#path1141"
-   clip-path="url(#clipPath1174)" /></g>
+
+
+
+
+
+
+	<image
+   sodipodi:absref="/home/bainer/Documents/Git/scoreboard/bin/Graphics/Themes/RPI-ACHA/../Default-Corner/homelogo1.png"
+   xlink:href="../Default-Corner/homelogo1.png"
+   inkscape:label="homeLogo"
+   width="66.878609"
+   height="66.878609"
+   preserveAspectRatio="xMidYMid"
+   style="image-rendering:optimizeQuality"
+   id="homeLogo"
+   x="392.91644"
+   y="45.152279" /></g>
 	
 	
 	
@@ -1410,7 +1532,7 @@
    d="M 719.4,44 H 670 659.4 c -6,10.3 -9.4,22.2 -9.4,35 0,12.8 3.4,24.7 9.4,35 H 670 719.4 750 V 44 Z"
    id="path923"
    inkscape:connector-curvature="0"
-   style="fill:url(#SVGID_19_);stroke:#ffffff;stroke-width:3;stroke-miterlimit:10" />
+   style="fill:url(#linearGradient4234);stroke:#ffffff;stroke-width:3;stroke-miterlimit:10" />
 		<linearGradient
    id="SVGID_20_"
    gradientUnits="userSpaceOnUse"
@@ -1738,6 +1860,30 @@
    id="path1071"
    inkscape:connector-curvature="0"
    style="fill:none;stroke:#ffffff;stroke-width:5;stroke-miterlimit:10" />
-	</g>
+	</g><text
+   xml:space="preserve"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:45px;line-height:1.25;font-family:'Trade Gothic Next LT Pro';-inkscape-font-specification:'Trade Gothic Next LT Pro, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.56862748"
+   x="1360.371"
+   y="94.944412"
+   id="periodText">1st</text>
+<text
+   xml:space="preserve"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:45px;line-height:1.25;font-family:'Trade Gothic Next LT Pro';-inkscape-font-specification:'Trade Gothic Next LT Pro, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.56862748"
+   x="688.95624"
+   y="93.277824"
+   id="homeScore">2</text>
+<text
+   xml:space="preserve"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:45px;line-height:1.25;font-family:'Trade Gothic Next LT Pro';-inkscape-font-specification:'Trade Gothic Next LT Pro, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.56862748"
+   x="1518.6826"
+   y="94.944412"
+   id="clockText">18:24</text>
+<text
+   xml:space="preserve"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:45px;line-height:1.25;font-family:'Trade Gothic Next LT Pro';-inkscape-font-specification:'Trade Gothic Next LT Pro, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.56862748"
+   x="787.80835"
+   y="94.468254"
+   id="awayScore">1</text>
+
 </g>
 </svg>

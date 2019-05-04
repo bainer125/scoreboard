@@ -16,12 +16,15 @@
 #include <QDomText>
 #include <QDomAttr>
 #include <QMessageBox>
+#include <QSvgWidget>
+#include <resvg.h>
 
 using namespace std;
 
 static updatesvg svg;
 
 static QFile intermission;
+//static QVector<QByteArray> scbdData;
 static QByteArray scbdData;
 static QSvgRenderer renderer;
 
@@ -709,10 +712,12 @@ void Overlay::ScoreboardShow(bool tf)
 }
 
 void Overlay::paintScoreboard(QByteArray scbdbytes){
+
     renderer.load(scbdbytes);
     QPixmap graphic(renderer.defaultSize());
     graphic.fill(Qt::transparent);
     QPainter pixPainter(&graphic);
+    pixPainter.setRenderHints(QPainter::Antialiasing|QPainter::SmoothPixmapTransform|QPainter::HighQualityAntialiasing);
     renderer.render(&pixPainter);
     ui->Scoreboard->setPixmap(graphic);
 }

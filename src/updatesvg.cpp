@@ -13,6 +13,7 @@
 using namespace std;
 
 QByteArray updatesvg::updateAttr(QByteArray pic, QString id, QString attr, QString val){
+    // Update svg element attribute
     QDomDocument doc;
     doc.setContent(pic);
     QDomElement svg = doc.documentElement();
@@ -22,12 +23,21 @@ QByteArray updatesvg::updateAttr(QByteArray pic, QString id, QString attr, QStri
 }
 
 QByteArray updatesvg::updateVal(QByteArray pic, QString id, QString val){
+    // Update svg element value
+
     QDomDocument doc;
     doc.setContent(pic);
     QDomElement svg = doc.documentElement();
     findElementVal(svg,id,val);
     pic = doc.toByteArray();
     return pic;
+}
+
+QVector<QByteArray> updatesvg::splitText(QByteArray og){
+    // Split full svg into an svg for only text and only shapes
+    // svg for text goes into return[0] and shapes return[1]
+
+
 }
 
 void updatesvg::findElementAttr( QDomElement& elem, QString id, QString attr, QString val){
