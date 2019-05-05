@@ -1446,13 +1446,16 @@ All</string>
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>660</y>
-        <width>92</width>
+        <y>690</y>
+        <width>161</width>
         <height>23</height>
        </rect>
       </property>
       <property name="text">
-       <string>CheckBox</string>
+       <string>Show Scoreboard</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QComboBox" name="comboTheme">
@@ -1463,6 +1466,22 @@ All</string>
         <width>121</width>
         <height>26</height>
        </rect>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="show_Shots">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>630</y>
+        <width>161</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Show Shots</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -2128,7 +2147,7 @@ All</string>
      <x>0</x>
      <y>0</y>
      <width>581</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuAbout">

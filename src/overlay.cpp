@@ -68,6 +68,17 @@ void Overlay::updateClock(QString clock_text){
     paintScoreboard(scbdData);
 }
 
+void Overlay::showShots(bool show){
+    if(!show){
+        scbdData=svg.updateAttr(scbdData,"shotsView","style","display:none");
+        paintScoreboard(scbdData);
+    }
+    else{
+        scbdData=svg.updateAttr(scbdData,"shotsView","style","display:inline");
+        paintScoreboard(scbdData);
+    }
+}
+
 void Overlay::updateTeams(QDir homeDir, QDir awayDir){
     /* Covers all graphic portions to be updated on a team change
      * Anything that is set in the theme config file will be changed here

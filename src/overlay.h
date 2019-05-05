@@ -20,6 +20,7 @@ public:
     ~Overlay();
     void loadScoreboard(QString filename);
     void updateClock(QString clock_text);
+    void showShots(bool show);
     void updateTeams(QDir home, QDir away);
     void updateScore(int home_score, int away_score);
     void updatePeriod(int period);

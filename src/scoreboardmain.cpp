@@ -1609,3 +1609,12 @@ void ScoreboardMain::on_comboTheme_currentTextChanged(const QString &arg1)
     on_Update_Timer_clicked();
 
 }
+
+void ScoreboardMain::on_show_Shots_clicked(){
+    if(ui->show_Shots->isChecked()){
+        ol->showShots(true);
+    }
+    else{
+        ol->showShots(false);
+    }
+}

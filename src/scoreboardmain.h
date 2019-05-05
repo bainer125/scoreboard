@@ -200,6 +200,8 @@ private slots:
 
     void on_comboTheme_currentTextChanged(const QString &arg1);
 
+    void on_show_Shots_clicked();
+
 protected:
 private:
     Overlay *ol;

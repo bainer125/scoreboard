@@ -114,6 +114,7 @@ public:
     QPushButton *Reset_All;
     QCheckBox *show_score;
     QComboBox *comboTheme;
+    QCheckBox *show_Shots;
     QWidget *S;
     QWidget *verticalLayoutWidget_4;
     QVBoxLayout *verticalLayout_4;
@@ -574,10 +575,15 @@ public:
         Reset_All->setFocusPolicy(Qt::NoFocus);
         show_score = new QCheckBox(tab);
         show_score->setObjectName(QString::fromUtf8("show_score"));
-        show_score->setGeometry(QRect(40, 660, 92, 23));
+        show_score->setGeometry(QRect(40, 690, 161, 23));
+        show_score->setChecked(true);
         comboTheme = new QComboBox(tab);
         comboTheme->setObjectName(QString::fromUtf8("comboTheme"));
         comboTheme->setGeometry(QRect(428, 630, 121, 26));
+        show_Shots = new QCheckBox(tab);
+        show_Shots->setObjectName(QString::fromUtf8("show_Shots"));
+        show_Shots->setGeometry(QRect(40, 630, 161, 23));
+        show_Shots->setChecked(true);
         Remote->addTab(tab, QString());
         S = new QWidget();
         S->setObjectName(QString::fromUtf8("S"));
@@ -809,7 +815,7 @@ public:
         ScoreboardMain->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(ScoreboardMain);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 581, 23));
+        menuBar->setGeometry(QRect(0, 0, 581, 22));
         menuAbout = new QMenu(menuBar);
         menuAbout->setObjectName(QString::fromUtf8("menuAbout"));
         menuContributers = new QMenu(menuBar);
@@ -913,7 +919,8 @@ public:
         End_Game_Button->setText(QApplication::translate("ScoreboardMain", "End Game", nullptr));
         Reset_All->setText(QApplication::translate("ScoreboardMain", "Reset\n"
 "All", nullptr));
-        show_score->setText(QApplication::translate("ScoreboardMain", "CheckBox", nullptr));
+        show_score->setText(QApplication::translate("ScoreboardMain", "Show Scoreboard", nullptr));
+        show_Shots->setText(QApplication::translate("ScoreboardMain", "Show Shots", nullptr));
         Remote->setTabText(Remote->indexOf(tab), QApplication::translate("ScoreboardMain", "Scoreboard", nullptr));
         Hotkey_Checkbox->setText(QApplication::translate("ScoreboardMain", "Use Hotkey", nullptr));
         Usehotkey_Help->setText(QApplication::translate("ScoreboardMain", "Help", nullptr));
