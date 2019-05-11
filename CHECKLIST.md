@@ -12,6 +12,20 @@ Goal here is to separate time/score keeping for different sports; start with hoc
 
 Almost entirety of current scoreboardmain.cpp is for hockey scorekeeping
 
+## Separate Text and Graphics
+
+Create QLabels in the same hierarchy as the SVG and render specific portions in
+those labels. This will allow for separation of the text which will decrease CPU
+usage.
+
+The 'style' attribute from the SVG can go directly into 'stylesheet' in Qt and
+create the same format, so just parse and transfer.
+
+Perhaps add an option in settings to choose this rendering option over directly
+rendering the SVG on every update; SVG Tiny doesn't support animations but 
+whatever renderer that is moved to might, so that option needs to be available
+for those whose machines can handle the extra power required.
+
 ## SVG Parsing and Updating
 
 Implemented very rudimentary solution right now in updatesvg.cpp; need recursive
