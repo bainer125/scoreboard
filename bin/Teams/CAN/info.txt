@@ -1,0 +1,7 @@
+ fullName=Canada
+ name=Canada
+ abbr=CAN
+ mascot=Canadians
+ color1=#ba0000
+ color3=#ffffff
+ color2=#000000

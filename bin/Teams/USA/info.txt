@@ -1,0 +1,7 @@
+ fullName=United States of America
+ name=United States
+ abbr=USA
+ mascot=Americans
+ color1=#1c3586
+ color2=#bb3031
+ color3=#ffffff
