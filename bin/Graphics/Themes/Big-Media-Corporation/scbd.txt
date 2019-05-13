@@ -1,6 +1,6 @@
 HomeTeamAttr
-color1=homeColor{style(fill:><)}&&awayPenaltyColor{style(fill:><;fill-opacity:0.784)}&&homeShotsColor{style(fill:><)}
-#color2
+#color1=homeColor{style(fill:><)}&&awayPenaltyColor{style(fill:><;fill-opacity:0.784)}&&homeShotsColor{style(fill:><)}
+color2=homeColor{style(fill:><)}&&awayPenaltyColor{style(fill:><;fill-opacity:0.784)}&&homeShotsColor{style(fill:><)}
 #color3
 #color4
 logo1=homeLogo{xlink:href(><)}

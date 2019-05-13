@@ -1,0 +1,7 @@
+ fullName=Sweden
+ name=Sweden
+ abbr=SWE
+ mascot=Swedes
+ color1=#fecc00
+ color2=#006aa7
+ color3=#ffffff

@@ -1,0 +1,7 @@
+ fullName=Finland
+ name=Finland
+ abbr=FIN
+ mascot=Finns
+ color1=#0f80cc
+ color2=#ffffff
+ color3=#002F6C
